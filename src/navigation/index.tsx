@@ -20,7 +20,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator(): React.ReactElement {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{}}>
+      <Stack.Navigator headerMode="none" initialRouteName="HomeScreen">
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>

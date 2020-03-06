@@ -8,23 +8,15 @@
 
 import React from "react";
 import {ReactNode} from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from "react-native";
 
-import {AppProvider} from "./src/containers/AppProvider";
 import RootProvider from "./src/containers/RootContainer";
+import RootNavigator from "./src/navigation";
 
-const App: () => ReactNode = () => {
+const App: ReactNode = () => {
   return (
-    <AppProvider>
-      <RootProvider />
-    </AppProvider>
+    <RootProvider>
+      <RootNavigator />
+    </RootProvider>
   );
 };
 
