@@ -48,30 +48,31 @@ const logError = (error: any) => {
   };
 };
 
-const GET = (url: string, config = {}) => {
+export const GET = (url: string, config = {}) => {
   return instance
     .get(url, config)
     .then(checkStatus)
     .catch(logError);
 };
 
-const POST = (url: string, params: object, config = {}) => {
+export const POST = (url: string, params: object, config = {}) => {
   return instance
     .post(url, params, config)
     .then(checkStatus)
     .catch(logError);
 };
 
-const PUT = (url: string, params: object, config = {}) => {
+export const PUT = (url: string, params: object, config = {}) => {
   return instance
     .put(url, params, config)
     .then(checkStatus)
     .catch(logError);
 };
 
-const DELETE = (url: string, config = {}) => {
+export const DELETE = (url: string, config = {}) => {
   return instance
     .delete(url, config)
     .then(checkStatus)
     .catch(logError);
 };
+
