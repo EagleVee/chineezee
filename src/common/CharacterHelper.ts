@@ -8,20 +8,6 @@ const MIN_BIG5A = 0xa440;
 const MAX_BIG5A = 0xc69f;
 
 export default class CharacterHelper {
-  static check() {
-    if (typeof String.prototype.trim !== "function") {
-      String.prototype.trim = function() {
-        return this.replace(/^\s*(\S*(\s+\S+)*)\s*$/, "$1");
-      };
-    }
-
-    if (typeof String.prototype.endsWith !== "function") {
-      String.prototype.endsWith = function(s) {
-        return this.indexOf(s, this.length - s.length) !== -1;
-      };
-    }
-  }
-
   // Returns true if the first character is Chinese
   static isChinese(ch: string) {
     if (!ch || ch.length === 0) {
@@ -42,7 +28,6 @@ export default class CharacterHelper {
     return value >= MIN_BIG5A && value <= MAX_BIG5A;
   }
 
-  ///////////////////////////////////////////////////////////////////////////
   // functions
 
   // Return a new string by replacing one character with supplied string
@@ -141,7 +126,6 @@ export default class CharacterHelper {
     return result;
   }
 
-  ///////////////////////////////////////////////////////////////////////////
   // sounds
 
   // Split the given sound and its tone, if any
@@ -339,7 +323,6 @@ export default class CharacterHelper {
     return this.addDiacritic(result, tone);
   }
 
-  ///////////////////////////////////////////////////////////////////////////
   // Yale romanization for Cantonese
 
   // Convert a list of space-separated Unihan-format sounds to an array of Yale syllables
@@ -386,7 +369,6 @@ export default class CharacterHelper {
     return this.addDiacritic(result, tone);
   }
 
-  ///////////////////////////////////////////////////////////////////////////
   // filters
 
   // Negate things like x, x+y, x|y
