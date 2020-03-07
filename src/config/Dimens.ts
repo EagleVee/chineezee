@@ -1,4 +1,4 @@
-import {Dimensions, Platform, StatusBar} from "react-native";
+import { Dimensions, Platform, StatusBar } from "react-native";
 // import DeviceInfo from "react-native-device-info";
 
 const NORMAL_STATUS_BAR_HEIGHT =

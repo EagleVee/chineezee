@@ -1,4 +1,4 @@
-import {GET, POST, PUT, DELETE} from "./index";
+import { GET, POST, PUT, DELETE } from "./index";
 
 const API = {
   getUser: (uuid: string) => {

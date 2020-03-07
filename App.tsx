@@ -7,7 +7,7 @@
  */
 
 import React from "react";
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 
 import RootProvider from "./src/containers/RootContainer";
 import RootNavigator from "./src/navigation";

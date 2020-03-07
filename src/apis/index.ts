@@ -28,7 +28,7 @@ const logError = (error: any) => {
   console.log("ERROR RESPONSE:", error.response);
   console.log("ERROR API:", error);
   if (error.response) {
-    const {status, data} = error.response;
+    const { status, data } = error.response;
     if (status === STATUS_BAD_REQUEST) {
       return data;
     } else if (status === STATUS_UNAUTHORIZED) {
@@ -75,4 +75,3 @@ export const DELETE = (url: string, config = {}) => {
     .then(checkStatus)
     .catch(logError);
 };
-

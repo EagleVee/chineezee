@@ -35,7 +35,7 @@ const colors = {
   bootstrapDanger: "#d9534f",
   bootstrapWarning: "#f0ad4e",
   bootstrapInfo: "#5bc0de",
-  bootstrapInverse: "#292b2c"
+  bootstrapInverse: "#292b2c",
 };
 
 export default colors;

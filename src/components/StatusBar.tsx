@@ -1,7 +1,7 @@
 import React from "react";
-import {StatusBar, View, Platform} from "react-native";
+import { StatusBar, View, Platform } from "react-native";
 import PropTypes from "prop-types";
-import {STATUS_BAR_HEIGHT} from "../config/Dimens";
+import { STATUS_BAR_HEIGHT } from "../config/Dimens";
 
 const Statusbar = ({
   backgroundColor = "transparent",

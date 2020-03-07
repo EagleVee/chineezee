@@ -1,4 +1,4 @@
-import {AppProvider} from "./AppProvider";
+import { AppProvider } from "./AppProvider";
 import React from "react";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
 }
 
 // Add providers here
-const RootProvider = ({children}: Props): React.ReactElement => {
+const RootProvider = ({ children }: Props): React.ReactElement => {
   return <AppProvider>{children}</AppProvider>;
 };
 

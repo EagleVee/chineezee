@@ -1,13 +1,18 @@
-import React, {PureComponent} from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import {SafeAreaView, KeyboardAvoidingView, Platform, View} from "react-native";
+import {
+  SafeAreaView,
+  KeyboardAvoidingView,
+  Platform,
+  View,
+} from "react-native";
 import styles from "./styles/ContainerStyle";
-import {STATUS_BAR_HEIGHT} from "../config/Dimens";
+import { STATUS_BAR_HEIGHT } from "../config/Dimens";
 import StatusBar from "./StatusBar";
 
 class Container extends PureComponent<Props> {
   render() {
-    const {props} = this;
+    const { props } = this;
     const {
       content,
       translucent,
