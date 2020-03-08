@@ -11,6 +11,7 @@ YellowBox.ignoreWarnings([
   "Warning: componentWillMount is deprecated",
   "Warning: componentWillReceiveProps is deprecated",
   "Module RCTImageLoader",
+  "Remote debugger",
 ]);
 
 AppRegistry.registerComponent(appName, () => App);

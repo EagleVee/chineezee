@@ -6,7 +6,10 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React, { ReactElement } from "react";
-import HomeScreen from "../containers/HomeScreen";
+import StrokeOrderScreen from "../containers/StrokeOrderScreen";
+import DictionaryScreen from "../containers/DictionaryScreen";
+import i18n from "i18n-js";
+import PronunciationScreen from "../containers/PronunciationScreen";
 
 export type RootStackParamList = {
   AppTab: ReactElement;
@@ -22,11 +25,21 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function AppTab(): React.ReactElement {
   return (
-    <Tab.Navigator initialRouteName="HomeScreen">
+    <Tab.Navigator initialRouteName="StrokeOrderScreen">
       <Tab.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{ title: "Trang chủ" }}
+        name="StrokeOrderScreen"
+        component={StrokeOrderScreen}
+        options={{ title: i18n.t("tab-stroke") }}
+      />
+      <Tab.Screen
+        name="DictionaryScreen"
+        component={DictionaryScreen}
+        options={{ title: i18n.t("tab-dictionary") }}
+      />
+      <Tab.Screen
+        name="PronunciationScreen"
+        component={PronunciationScreen}
+        options={{ title: i18n.t("tab-pronunciation") }}
       />
     </Tab.Navigator>
   );

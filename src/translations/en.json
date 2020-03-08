@@ -1,4 +1,7 @@
 {
   "hello-world": "Hello World!",
-  "error": "Some errors happened, please try again!"
+  "error": "Some errors happened, please try again!",
+  "tab-dictionary": "Dictionary",
+  "tab-stroke": "Stroke Order",
+  "tab-pronunciation": "Pronunciation"
 }
