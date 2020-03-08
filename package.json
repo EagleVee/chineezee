@@ -13,7 +13,8 @@
     "ios-11-promax": "react-native run-ios --simulator=\"iPhone 11 Pro Max\"",
     "ios-production": "react-native run-ios --simulator=\"iPhone 8 Plus iOs 12.4\"",
     "ios-release": "react-native run-ios --configuration Release --device \"Đàm Trung Đức’s iPhone\"",
-    "ios-local": "ENVFILE=.env.local react-native run-ios --simulator=\"iPhone 11 Pro Max\""
+    "ios-local": "ENVFILE=.env.local react-native run-ios --simulator=\"iPhone 11 Pro Max\"",
+    "generate-component": "cd src/components && echo > ${FILE}.tsx && cd styles && echo > \"${FILE}Style.ts\" && cd ../../.."
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
