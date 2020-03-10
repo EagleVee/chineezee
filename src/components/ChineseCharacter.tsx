@@ -1,5 +1,5 @@
 import React, { createRef } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import SvgAssets from "../resources/SvgAssets";
 import { loadLocalRawResource } from "../common/AssetsHelper";
 import WebView from "react-native-webview";
@@ -25,11 +25,13 @@ class ChineseCharacter extends React.Component<Props> {
     if (xmlData.length === 0) {
       return <View />;
     }
+    const html = this.getHtmlFromCharacter(this.props.character);
     return (
       <View style={styles.container}>
         <WebView
-          source={{ html: xmlData }}
+          source={{ html: html }}
           bounces={false}
+          javaScriptEnabled
           style={{ backgroundColor: "transparent", width: 300, height: 300 }}
         />
         <TouchableOpacity
@@ -42,6 +44,32 @@ class ChineseCharacter extends React.Component<Props> {
         </TouchableOpacity>
       </View>
     );
+  }
+
+  getHtmlFromCharacter(character: string) {
+    return `
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@2.2/dist/hanzi-writer.min.js"></script>
+      </head>
+      <body>
+        <div id="target">Character</div>
+        <script>
+          document.getElementById("target").innerHTML = "";
+          const writer = HanziWriter.create("target", "${character}", {
+            width: 300,
+            height: 300,
+            delayBetweenStrokes: 800,
+            delayBetweenLoops: 500
+          });
+          writer.loopCharacterAnimation();
+        </script>
+      </body>
+    </html>
+  `;
   }
 
   componentDidMount(): void {
