@@ -3,5 +3,6 @@
   "error": "Some errors happened, please try again!",
   "tab-dictionary": "Dictionary",
   "tab-stroke": "Stroke Order",
-  "tab-pronunciation": "Pronunciation"
+  "tab-pronunciation": "Pronunciation",
+  "stroke-reset": "Reset"
 }

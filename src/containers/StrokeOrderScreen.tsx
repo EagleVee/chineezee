@@ -16,10 +16,18 @@ function StrokeOrderScreen(props: Props): ReactElement {
     <Container style={styles.container}>
       <View style={styles.middle}>
         <Text style={styles.title}>{i18n.t("hello-world")}</Text>
-        <ChineseCharacter character={"好"} />
+        <ChineseCharacter character="性" />
       </View>
     </Container>
   );
+}
+
+function drawLine(line: number, space: number) {
+  if (line === 1) {
+    return "*"
+  }
+
+
 }
 
 export default StrokeOrderScreen;
