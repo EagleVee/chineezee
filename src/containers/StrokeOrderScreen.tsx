@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import styles from "./styles/StrokeOrderScreenStyle";
 import Container from "../components/Container";
 import i18n from "i18n-js";
+import ChineseCharacter from "../components/ChineseCharacter";
 
 interface Props {
   navigation: any;
@@ -15,6 +16,7 @@ function StrokeOrderScreen(props: Props): ReactElement {
     <Container style={styles.container}>
       <View style={styles.middle}>
         <Text style={styles.title}>{i18n.t("hello-world")}</Text>
+        <ChineseCharacter character={"好"} />
       </View>
     </Container>
   );
