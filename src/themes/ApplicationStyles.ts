@@ -10,6 +10,7 @@ interface Style {
 export default StyleSheet.create<Style>({
   container: {
     flex: 1,
+    backgroundColor: "#292b2c",
   },
   middle: {
     flex: 1,

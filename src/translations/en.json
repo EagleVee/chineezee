@@ -4,5 +4,6 @@
   "tab-dictionary": "Dictionary",
   "tab-stroke": "Stroke Order",
   "tab-pronunciation": "Pronunciation",
-  "stroke-reset": "Reset"
+  "stroke-reset": "Reset",
+  "stroke-placeholder": "Insert some characters..."
 }
