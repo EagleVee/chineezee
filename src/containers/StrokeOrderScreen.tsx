@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles/StrokeOrderScreenStyle";
 import Container from "../components/Container";
@@ -16,6 +15,7 @@ import ChineseCharacter from "../components/ChineseCharacter";
 import IconLeft from "../resources/images/icons/icon_arrow_left.png";
 import IconRight from "../resources/images/icons/icon_arrow_right.png";
 
+const CHINESE_REGEX = /[\u4E00-\u9FCC\u3400-\u4DB5\uFA0E\uFA0F\uFA11\uFA13\uFA14\uFA1F\uFA21\uFA23\uFA24\uFA27-\uFA29]|[\ud840-\ud868][\udc00-\udfff]|\ud869[\udc00-\uded6\udf00-\udfff]|[\ud86a-\ud86c][\udc00-\udfff]|\ud86d[\udc00-\udf34\udf40-\udfff]|\ud86e[\udc00-\udc1d]/g;
 interface Props {
   navigation: any;
 }
@@ -26,24 +26,27 @@ function StrokeOrderScreen(props: Props): ReactElement {
 
   return (
     <Container style={styles.container}>
-      <View style={styles.middle}>
+      <View style={styles.inputContainer}>
         <TextInput
+          multiline
+          style={styles.input}
           placeholder={i18n.t("stroke-placeholder")}
           onChangeText={text => {
             setInput(text);
           }}
           onSubmitEditing={() => {
-            setData(input);
+            const data = input.match(CHINESE_REGEX);
+            // @ts-ignore
+            setData(data);
           }}
         />
-        {renderCharacter(data)}
       </View>
+      {renderCharacter(data)}
     </Container>
   );
 }
 
-function renderCharacter(input: string): ReactElement {
-  const data = input.split("");
+function renderCharacter(data: string): ReactElement {
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <View style={styles.strokeContainer}>

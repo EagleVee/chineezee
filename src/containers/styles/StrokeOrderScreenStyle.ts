@@ -36,4 +36,18 @@ export default StyleSheet.create({
     flex: 1,
   },
   flatListContent: {},
+  inputContainer: {
+    width: "100%",
+    height: 150,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    backgroundColor: "#c1c1c1",
+    paddingVertical: 5,
+  },
+  input: {
+    width: "100%",
+    paddingHorizontal: 10,
+    color: "white",
+    fontSize: 18
+  },
 });

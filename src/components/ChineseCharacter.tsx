@@ -1,10 +1,9 @@
-import React, {ReactElement, useState} from "react";
+import React, {ReactElement} from "react";
 import { View } from "react-native";
 import WebView from "react-native-webview";
 import styles from "./styles/ChineseCharacterStyle";
 import i18n from "i18n-js";
-import { loadLocalRawResource } from "../common/AssetsHelper";
-import SvgAssets from "../resources/SvgAssets";
+import SvgAssets from "../resources/Svgs";
 
 interface Props {
   character: string;
@@ -13,7 +12,6 @@ interface Props {
 export default function ChineseCharacter(props: Props): ReactElement {
   const { character } = props;
   const html = getHtmlFromCharacter(character);
-  console.log(html);
   return (
     <View style={styles.webViewContainer}>
       <WebView
@@ -31,17 +29,16 @@ export default function ChineseCharacter(props: Props): ReactElement {
 }
 
 function getHtmlFromCharacter(character: string): string {
-  const [xml, setXml] = useState(defaultSvg);
+  let svg = defaultSvg;
   if (character) {
     const charCode = character.charCodeAt(0);
     // @ts-ignore
-    loadLocalRawResource(SvgAssets[charCode])
-      .then(result => {
-        setXml(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    if (SvgAssets[charCode]) {
+      // @ts-ignore
+      svg = SvgAssets[charCode];
+    } else {
+      svg = defaultSvg;
+    }
   }
 
   return `
@@ -58,7 +55,7 @@ function getHtmlFromCharacter(character: string): string {
       <body>
         <div class="target-container">
             <div id="target">
-                ${xml}
+                ${svg}
             </div>
         </div>
         <div class="stroke-reset-container">
@@ -129,6 +126,7 @@ const css = `
     align-items: center;
     justify-content: center;
     background-color: white;
+    overflow: hidden;
   }
   
   .stroke-reset-container {
@@ -137,7 +135,7 @@ const css = `
 
   #target {
     width: 250px;
-    height: 250px;
+    height: 235px;
   }
 `;
 
