@@ -1,2 +1,4 @@
 *.pbxproj -text
-src/resources/* filter=lfs diff=lfs merge=lfs -text
+*.ts filter=lfs diff=lfs merge=lfs -text
+*.tsx filter=lfs diff=lfs merge=lfs -text
+
