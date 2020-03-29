@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint .",
     "android-dev": "react-native run-android",
-    "ios-develop": "react-native run-ios --simulator=\"iPhone 8 Plus\"",
+    "ios-8-plus": "react-native run-ios --simulator=\"iPhone 8 Plus\"",
     "ios-11-promax": "react-native run-ios --simulator=\"iPhone 11 Pro Max\"",
     "ios-production": "react-native run-ios --simulator=\"iPhone 8 Plus iOs 12.4\"",
     "ios-release": "react-native run-ios --configuration Release --device \"Đàm Trung Đức’s iPhone\"",

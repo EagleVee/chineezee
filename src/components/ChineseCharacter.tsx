@@ -39,6 +39,8 @@ function getHtmlFromCharacter(character: string): string {
     } else {
       svg = defaultSvg;
     }
+  } else {
+    svg = defaultSvg;
   }
 
   return `
