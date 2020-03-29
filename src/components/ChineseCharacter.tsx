@@ -84,11 +84,10 @@ function getHtmlFromCharacter(character: string): string {
               animationDuration = animationDuration + duration;
             }
           }
-          function loopAnimation() {
-            setInterval(function() {
+          
+          let loopAnimation = setInterval(function() {
               removeAndAppend();
-            }, (animationDuration + 0.4) * 1000);
-          }
+          }, (animationDuration + 0.3) * 1000);
     
           function removeAndAppend() {
             const content = parentNode.innerHTML;
@@ -98,10 +97,11 @@ function getHtmlFromCharacter(character: string): string {
     
           function reset() {
             removeAndAppend();
-            loopAnimation();
+            clearInterval(loopAnimation);
+            loopAnimation = setInterval(function() {
+            removeAndAppend();
+            }, (animationDuration + 0.3) * 1000);
           }
-    
-          loopAnimation();
         </script>
       </body>
     </html>

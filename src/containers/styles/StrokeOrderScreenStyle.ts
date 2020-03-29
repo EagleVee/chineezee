@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { ApplicationStyles } from "../../themes";
+import {ApplicationStyles, Colors} from "../../themes";
 import { deviceWidth } from "../../config/Dimens";
 
 export default StyleSheet.create({
@@ -46,8 +46,23 @@ export default StyleSheet.create({
   },
   input: {
     width: "100%",
+    maxWidth: "100%",
+    height: 150,
     paddingHorizontal: 10,
     color: "white",
-    fontSize: 18
+    fontSize: 18,
+  },
+  confirmButton: {
+    alignSelf: "center",
+    marginTop: 20,
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    alignItems: "center",
+    backgroundColor: Colors.bootstrapSuccess,
+    borderRadius: 4
+  },
+  confirmText: {
+    fontSize: 16,
+    color: "white",
   },
 });

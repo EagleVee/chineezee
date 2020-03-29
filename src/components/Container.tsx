@@ -55,7 +55,7 @@ interface Props {
   behavior?: any;
   statusBarColor?: "transparent";
   style?: object;
-  notSafeArea?: false;
+  notSafeArea?: boolean;
   isPadding?: false;
   paddingStyle?: object;
   keyboardVerticalOffset?: number;
