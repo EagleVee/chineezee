@@ -24,18 +24,19 @@ interface Props {
 
 function StrokeOrderScreen(props: Props): ReactElement {
   const [input, setInput] = useState("");
-  const [data, setData] = useState("");
+  const [data, setData] = useState([""]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   function showCharacter() {
     Keyboard.dismiss();
     const data = input.match(CHINESE_REGEX);
-    // @ts-ignore
-    setData(data);
-    setCurrentIndex(0);
+    if (data && data.length > 0) {
+      setData(data);
+      setCurrentIndex(0);
+    }
   }
 
-  function renderCharacter(data: string): ReactElement {
+  function renderCharacter(): ReactElement {
     return (
       <View style={styles.strokeContainer}>
         <View style={styles.previousContainer}>
@@ -91,7 +92,7 @@ function StrokeOrderScreen(props: Props): ReactElement {
         <TouchableOpacity style={styles.confirmButton} onPress={showCharacter}>
           <Text style={styles.confirmText}>{i18n.t("confirm")}</Text>
         </TouchableOpacity>
-        {renderCharacter(data)}
+        {renderCharacter()}
       </RNScrollView>
     </Container>
   );

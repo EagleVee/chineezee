@@ -4,6 +4,10 @@ import { deviceWidth } from "../../config/Dimens";
 
 export default StyleSheet.create({
   ...ApplicationStyles,
+  container: {
+    ...ApplicationStyles.container,
+    paddingTop: 10,
+  },
   title: {
     textAlign: "center",
     color: "black",
@@ -37,12 +41,13 @@ export default StyleSheet.create({
   },
   flatListContent: {},
   inputContainer: {
-    width: "100%",
     height: 150,
     alignItems: "center",
     justifyContent: "flex-start",
     backgroundColor: "#c1c1c1",
     paddingVertical: 5,
+    borderRadius: 5,
+    marginHorizontal: 5
   },
   input: {
     width: "100%",
@@ -59,7 +64,7 @@ export default StyleSheet.create({
     paddingVertical: 10,
     alignItems: "center",
     backgroundColor: Colors.bootstrapSuccess,
-    borderRadius: 4
+    borderRadius: 4,
   },
   confirmText: {
     fontSize: 16,
