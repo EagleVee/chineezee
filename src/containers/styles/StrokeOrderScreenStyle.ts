@@ -47,7 +47,7 @@ export default StyleSheet.create({
     backgroundColor: "#c1c1c1",
     paddingVertical: 5,
     borderRadius: 5,
-    marginHorizontal: 5
+    marginHorizontal: 10
   },
   input: {
     width: "100%",
