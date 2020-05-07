@@ -3,7 +3,7 @@ import { View } from "react-native";
 import WebView from "react-native-webview";
 import styles from "./styles/ChineseCharacterStyle";
 import i18n from "i18n-js";
-import SvgAssets from "../resources/Svgs";
+import SvgAssets from "../resources/SvgAssets";
 
 interface Props {
   character: string;
@@ -47,9 +47,6 @@ function getHtmlFromCharacter(character: string): string {
     <html>
       <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@2.2/dist/hanzi-writer.min.js"></script>
         <style>
             ${css}
         </style>

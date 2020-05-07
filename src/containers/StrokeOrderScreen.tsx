@@ -77,8 +77,6 @@ function StrokeOrderScreen(props: Props): ReactElement {
     );
   }
 
-  console.log(Dictionary["⺀"]);
-
   return (
     <Container style={styles.container}>
       <RNScrollView>

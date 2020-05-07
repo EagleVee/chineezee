@@ -41,14 +41,14 @@
     "react-native-screens": "^2.2.0",
     "react-native-splash-screen": "^3.2.0",
     "react-native-svg": "^12.0.3",
-    "react-native-webview": "^8.1.2"
+    "react-native-webview": "^8.1.2",
+    "@types/react": "^16.9.23",
+    "@types/react-native": "^0.61.19"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^0.0.5",
-    "@types/react": "^16.9.23",
-    "@types/react-native": "^0.61.19",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",
     "babel-jest": "^24.9.0",
