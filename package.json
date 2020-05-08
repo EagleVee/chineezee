@@ -25,6 +25,8 @@
     "@react-navigation/native": "^5.0.9",
     "@react-navigation/stack": "^5.1.1",
     "@types/i18n-js": "^3.0.1",
+    "@types/react": "^16.9.23",
+    "@types/react-native": "^0.61.19",
     "axios": "^0.19.2",
     "hanzi-writer": "^2.2.2",
     "i18n-js": "^3.5.1",
@@ -41,9 +43,8 @@
     "react-native-screens": "^2.2.0",
     "react-native-splash-screen": "^3.2.0",
     "react-native-svg": "^12.0.3",
-    "react-native-webview": "^8.1.2",
-    "@types/react": "^16.9.23",
-    "@types/react-native": "^0.61.19"
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-webview": "^8.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

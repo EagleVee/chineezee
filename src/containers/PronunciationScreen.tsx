@@ -14,7 +14,7 @@ function PronunciationScreen(props: Props): ReactElement {
   return (
     <Container style={styles.container}>
       <View style={styles.middle}>
-        <Text style={styles.title}>{i18n.t("tab-pronunciation")}</Text>
+        <Text style={styles.title}>{i18n.t("constructing")}</Text>
       </View>
     </Container>
   );

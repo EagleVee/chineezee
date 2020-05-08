@@ -4,7 +4,10 @@
   "tab-dictionary": "Dictionary",
   "tab-stroke": "Stroke Order",
   "tab-pronunciation": "Pronunciation",
+  "tab-about": "About",
   "stroke-reset": "Reset",
   "stroke-placeholder": "Insert some characters...",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+  "constructing": "Developing... :("
+
 }

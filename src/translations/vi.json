@@ -4,7 +4,9 @@
   "tab-dictionary": "Từ điển",
   "tab-stroke": "Nét chữ",
   "tab-pronunciation": "Phát âm",
+  "tab-about": "Về tác giả",
   "stroke-reset": "Xem lại",
   "stroke-placeholder": "Thêm vài từ nào...",
-  "confirm": "Xác nhận"
+  "confirm": "Xác nhận",
+  "constructing": "Đang phát triển... :("
 }

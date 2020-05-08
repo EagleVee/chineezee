@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import {ApplicationStyles, Colors} from "../../themes";
-import { deviceWidth } from "../../config/Dimens";
+import {deviceWidth, WIDTH_RATIO} from "../../config/Dimens";
 
 export default StyleSheet.create({
   ...ApplicationStyles,
@@ -9,23 +9,25 @@ export default StyleSheet.create({
     paddingTop: 10,
   },
   title: {
+    fontSize: 24,
     textAlign: "center",
-    color: "black",
+    color: "white",
+    fontWeight: "500",
   },
   strokeContainer: {
     width: deviceWidth,
-    height: 350,
+    height: 400 * WIDTH_RATIO,
     paddingVertical: 20,
     flexDirection: "row",
     justifyContent: "center",
   },
   previousContainer: {
-    height: 250,
+    height: 250 * WIDTH_RATIO,
     alignItems: "center",
     justifyContent: "center",
   },
   nextContainer: {
-    height: 250,
+    height: 250 * WIDTH_RATIO,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -41,13 +43,13 @@ export default StyleSheet.create({
   },
   flatListContent: {},
   inputContainer: {
-    height: 150,
+    height: 120,
     alignItems: "center",
     justifyContent: "flex-start",
-    backgroundColor: "#c1c1c1",
+    backgroundColor: Colors.twitterInput,
     paddingVertical: 5,
     borderRadius: 5,
-    marginHorizontal: 10
+    marginHorizontal: 10,
   },
   input: {
     width: "100%",
@@ -60,14 +62,15 @@ export default StyleSheet.create({
   confirmButton: {
     alignSelf: "center",
     marginTop: 20,
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     paddingVertical: 10,
     alignItems: "center",
-    backgroundColor: Colors.bootstrapSuccess,
-    borderRadius: 4,
+    backgroundColor: Colors.twitterBlue,
+    borderRadius: 6,
   },
   confirmText: {
     fontSize: 16,
     color: "white",
+    fontWeight: "500",
   },
 });

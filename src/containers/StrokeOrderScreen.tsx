@@ -83,6 +83,7 @@ function StrokeOrderScreen(props: Props): ReactElement {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.input}
+            placeholderTextColor="white"
             placeholder={i18n.t("stroke-placeholder")}
             onChangeText={text => {
               setInput(text);

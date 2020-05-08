@@ -36,20 +36,12 @@ target 'chinezee' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
-  target 'chinezeeTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
   use_native_modules!
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 end
 
 target 'chinezee-tvOS' do
   # Pods for chinezee-tvOS
-
-  target 'chinezee-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end

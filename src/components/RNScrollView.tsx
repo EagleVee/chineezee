@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from "react";
+import React, {FunctionComponent, ReactElement, ReactNode} from "react";
 import {ScrollView} from "react-native";
 
 interface Props {
@@ -13,7 +13,7 @@ export default function RNScrollView(props: Props): ReactElement {
       alwaysBounceVertical={false}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
-      keyboardShouldPersistTaps="always">
+      keyboardShouldPersistTaps="never">
       {props.children}
     </ScrollView>
   );

@@ -2,6 +2,7 @@
 // Similar to an XML fragment layout in Android
 import { ImageStyle, StyleSheet, ViewStyle } from "react-native";
 import {STATUS_BAR_HEIGHT} from "../config/Dimens";
+import {Colors} from "./index";
 
 interface Style {
   container: ViewStyle;
@@ -11,7 +12,7 @@ interface Style {
 export default StyleSheet.create<Style>({
   container: {
     flex: 1,
-    backgroundColor: "#292b2c",
+    backgroundColor: Colors.twitterNightMode,
   },
   middle: {
     flex: 1,

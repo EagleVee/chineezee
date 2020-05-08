@@ -5,6 +5,7 @@ import styles from "./styles/ChineseCharacterStyle";
 import i18n from "i18n-js";
 import SvgAssets from "../resources/SvgAssets";
 import {WIDTH_RATIO} from "../config/Dimens";
+import {Colors} from "../themes";
 
 interface Props {
   character: string;
@@ -22,7 +23,7 @@ export default function ChineseCharacter(props: Props): ReactElement {
         style={{
           backgroundColor: "transparent",
           width: 250 * WIDTH_RATIO,
-          height: 300 * WIDTH_RATIO,
+          height: 320 * WIDTH_RATIO,
         }}
       />
     </View>
@@ -43,7 +44,6 @@ function getHtmlFromCharacter(character: string): string {
   } else {
     svg = defaultSvg;
   }
-  console.log(css);
   return `
     <html>
       <head>
@@ -114,9 +114,9 @@ const height = 235 * WIDTH_RATIO;
 
 const css = `
   .stroke-reset {
-    background-color: #f7f7f7;
-    color: #292b2c;
-    padding: 5px 10px;
+    background-color: ${Colors.twitterBlue};
+    color: white;
+    padding: 6px 10px;
   }
   
   button {

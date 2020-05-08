@@ -36,6 +36,11 @@ const colors = {
   bootstrapWarning: "#f0ad4e",
   bootstrapInfo: "#5bc0de",
   bootstrapInverse: "#292b2c",
+  twitterBlue: "#1DA1F2",
+  twitterDarkGray: "#657786",
+  twitterLightGray: "#AAB8C2",
+  twitterNightMode: "#243447",
+  twitterInput: "#141d26",
 };
 
 export default colors;

@@ -14,8 +14,7 @@ function DictionaryScreen(props: Props): ReactElement {
   return (
     <Container style={styles.container}>
       <View style={styles.middle}>
-        <Text style={styles.title}>{i18n.t("error")}</Text>
-        {renderButton(props)}
+        <Text style={styles.title}>{i18n.t("constructing")}</Text>
       </View>
     </Container>
   );
