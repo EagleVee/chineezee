@@ -4,6 +4,7 @@ import WebView from "react-native-webview";
 import styles from "./styles/ChineseCharacterStyle";
 import i18n from "i18n-js";
 import SvgAssets from "../resources/SvgAssets";
+import {WIDTH_RATIO} from "../config/Dimens";
 
 interface Props {
   character: string;
@@ -105,6 +106,9 @@ function getHtmlFromCharacter(character: string): string {
   `;
 }
 
+const width = 250 * WIDTH_RATIO;
+const height = 235 * WIDTH_RATIO;
+
 const css = `
   .stroke-reset {
     background-color: #f7f7f7;
@@ -133,8 +137,8 @@ const css = `
   }
 
   #target {
-    width: 250px;
-    height: 235px;
+    width: ${width}px;
+    height: ${height}px;
   }
 `;
 
