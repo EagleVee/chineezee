@@ -15,6 +15,7 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		6720EDF924656C4400D2E8EA /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6720EDF824656C4400D2E8EA /* splash.png */; };
 		DEBFF036DA85A8B5632783DC /* libPods-chinezee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5867704513937C9A63A020E8 /* libPods-chinezee.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		56880197605C440AB7C8EF0A /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		56937EF0E734262845F2E2CC /* Pods-chinezee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinezee.release.xcconfig"; path = "Target Support Files/Pods-chinezee/Pods-chinezee.release.xcconfig"; sourceTree = "<group>"; };
 		5867704513937C9A63A020E8 /* libPods-chinezee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chinezee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6720EDF824656C4400D2E8EA /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../../../Desktop/splash.png; sourceTree = "<group>"; };
 		67783CFAB77846A99A662C6C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		6A7B0B4FA4B9F8FD60333972 /* libPods-chinezee-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chinezee-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BAD980BFA2E439EA9C1C1D2 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				6720EDF824656C4400D2E8EA /* splash.png */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = chinezee;
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				6720EDF924656C4400D2E8EA /* splash.png in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

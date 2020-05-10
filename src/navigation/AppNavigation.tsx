@@ -38,7 +38,7 @@ function AppTab(): React.ReactElement {
           backgroundColor: Colors.twitterNightMode,
         },
         labelStyle: {
-          fontWeight: "500"
+          fontWeight: "500",
         },
         activeTintColor: Colors.twitterBlue,
         inactiveTintColor: Colors.twitterDarkGray,
