@@ -1,6 +1,6 @@
 import {
   StackNavigationProp,
-  createStackNavigator,
+  createStackNavigator
 } from "@react-navigation/stack";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -35,13 +35,13 @@ function AppTab(): React.ReactElement {
       initialRouteName="StrokeOrderScreen"
       tabBarOptions={{
         style: {
-          backgroundColor: Colors.twitterNightMode,
+          backgroundColor: Colors.twitterNightMode
         },
         labelStyle: {
-          fontWeight: "500",
+          fontWeight: "500"
         },
         activeTintColor: Colors.twitterBlue,
-        inactiveTintColor: Colors.twitterDarkGray,
+        inactiveTintColor: Colors.twitterDarkGray
       }}>
       <Tab.Screen
         name="StrokeOrderScreen"
@@ -50,7 +50,7 @@ function AppTab(): React.ReactElement {
           title: i18n.t("tab-stroke"),
           tabBarIcon: ({color, size}) => (
             <FontAwesome5Icon name={"pen-nib"} color={color} size={size}/>
-          ),
+          )
         }}
       />
       <Tab.Screen
@@ -64,7 +64,7 @@ function AppTab(): React.ReactElement {
               color={color}
               size={size}
             />
-          ),
+          )
         }}
       />
       <Tab.Screen
@@ -74,7 +74,7 @@ function AppTab(): React.ReactElement {
           title: i18n.t("tab-pronunciation"),
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcon name={"voice"} color={color} size={size}/>
-          ),
+          )
         }}
       />
       <Tab.Screen
@@ -84,7 +84,7 @@ function AppTab(): React.ReactElement {
           title: i18n.t("tab-about"),
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcon name={"account"} color={color} size={size}/>
-          ),
+          )
         }}
       />
     </Tab.Navigator>

@@ -7,25 +7,25 @@ export default StyleSheet.create({
     fontSize: 24,
     color: "white",
     marginBottom: 10,
-    fontWeight: "500",
+    fontWeight: "500"
   },
   name: {
     fontSize: 20,
     color: "white",
     fontWeight: "500",
-    marginBottom: 10,
+    marginBottom: 10
   },
   content: {
     paddingHorizontal: 16,
-    paddingVertical: 15,
+    paddingVertical: 15
   },
   body: {
     fontSize: 18,
-    color: "white",
+    color: "white"
   },
   bodyLink: {
     fontSize: 18,
     color: Colors.twitterBlue,
-    textDecorationLine: "underline",
-  },
+    textDecorationLine: "underline"
+  }
 });

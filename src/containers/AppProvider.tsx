@@ -14,7 +14,7 @@ const [useCtx, Provider] = createCtx<Context>();
 export enum ActionType {
   ResetUser = "reset-user",
   SetUser = "set-user",
-  CallDefault = "call-default",
+  CallDefault = "call-default"
 }
 
 export interface State {
@@ -22,7 +22,7 @@ export interface State {
 }
 
 const initialState: State = {
-  user: null,
+  user: null
 };
 
 interface SetUserAction {
@@ -48,22 +48,22 @@ type Reducer = (state: State, action: Action) => State;
 
 const callDefault = (dispatch: React.Dispatch<GetStateAction>) => (): void => {
   dispatch({
-    type: ActionType.CallDefault,
+    type: ActionType.CallDefault
   });
 };
 
 const setUser = (dispatch: React.Dispatch<SetUserAction>) => (
-  user: User,
+  user: User
 ): void => {
   dispatch({
     type: ActionType.SetUser,
-    payload: user,
+    payload: user
   });
 };
 
 const resetUser = (dispatch: React.Dispatch<ResetUserAction>) => (): void => {
   dispatch({
-    type: ActionType.ResetUser,
+    type: ActionType.ResetUser
   });
 };
 
@@ -84,7 +84,7 @@ function AppProvider(props: Props): React.ReactElement {
   const actions = {
     setUser: setUser(dispatch),
     resetUser: resetUser(dispatch),
-    callDefault: callDefault(dispatch),
+    callDefault: callDefault(dispatch)
   };
 
   return <Provider value={{ state, ...actions }}>{props.children}</Provider>;

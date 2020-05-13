@@ -23,6 +23,6 @@ const styles = {
     flex: 1,
     backgroundColor: Colors.twitterNightMode,
     alignItems: "center" as const,
-    justifyContent: "center" as const,
-  },
+    justifyContent: "center" as const
+  }
 };

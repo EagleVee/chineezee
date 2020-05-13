@@ -7,13 +7,13 @@ import {
   STATUS_BAD_REQUEST,
   STATUS_INTERNAL_SERVER_ERROR,
   STATUS_OK,
-  STATUS_UNAUTHORIZED,
+  STATUS_UNAUTHORIZED
 } from "../config/Remote";
 
 const instance = axios.create({
   baseURL: API_ENDPOINT,
   timeout: REQUEST_TIME_OUT,
-  headers: {},
+  headers: {}
 });
 
 const checkStatus = (response: any) => {
@@ -37,14 +37,14 @@ const logError = (error: any) => {
       return {
         data: "Mã lỗi" + status,
         msg: "Mã lỗi" + status,
-        code: status,
+        code: status
       };
     }
   }
   return {
     status: false,
     message: "Lỗi server",
-    error: error,
+    error: error
   };
 };
 

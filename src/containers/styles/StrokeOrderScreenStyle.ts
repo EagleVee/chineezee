@@ -6,40 +6,40 @@ export default StyleSheet.create({
   ...ApplicationStyles,
   container: {
     ...ApplicationStyles.container,
-    paddingTop: 10,
+    paddingTop: 10
   },
   title: {
     fontSize: 24,
     textAlign: "center",
     color: "white",
-    fontWeight: "500",
+    fontWeight: "500"
   },
   strokeContainer: {
     width: deviceWidth,
-    height: 400 * WIDTH_RATIO,
-    paddingVertical: 20,
+    height: 310 * WIDTH_RATIO,
+    paddingTop: 20,
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   previousContainer: {
     height: 250 * WIDTH_RATIO,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   nextContainer: {
     height: 250 * WIDTH_RATIO,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   sideButton: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 20
   },
   sideIcon: {
     width: 10,
-    height: 20,
+    height: 20
   },
   flatList: {
-    flex: 1,
+    flex: 1
   },
   flatListContent: {},
   inputContainer: {
@@ -49,7 +49,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.twitterInput,
     paddingVertical: 5,
     borderRadius: 5,
-    marginHorizontal: 10,
+    marginHorizontal: 10
   },
   input: {
     width: "100%",
@@ -57,7 +57,7 @@ export default StyleSheet.create({
     height: 120,
     paddingHorizontal: 10,
     color: "white",
-    fontSize: 18,
+    fontSize: 18
   },
   confirmButton: {
     alignSelf: "center",
@@ -66,11 +66,19 @@ export default StyleSheet.create({
     paddingVertical: 10,
     alignItems: "center",
     backgroundColor: Colors.twitterBlue,
-    borderRadius: 6,
+    borderRadius: 6
   },
   confirmText: {
     fontSize: 16,
     color: "white",
-    fontWeight: "500",
+    fontWeight: "500"
   },
+  definitionContainer: {
+    paddingHorizontal: 16,
+    paddingVertical: 20
+  },
+  definition: {
+    fontSize: 16,
+    color: "white"
+  }
 });

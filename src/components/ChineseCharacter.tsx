@@ -23,7 +23,7 @@ export default function ChineseCharacter(props: Props): ReactElement {
         style={{
           backgroundColor: "transparent",
           width: 250 * WIDTH_RATIO,
-          height: 320 * WIDTH_RATIO,
+          height: 250 * WIDTH_RATIO
         }}
       />
     </View>

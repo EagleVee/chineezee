@@ -40,7 +40,7 @@ const colors = {
   twitterDarkGray: "#657786",
   twitterLightGray: "#AAB8C2",
   twitterNightMode: "#243447",
-  twitterInput: "#141d26",
+  twitterInput: "#141d26"
 };
 
 export default colors;

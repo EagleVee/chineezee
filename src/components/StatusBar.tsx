@@ -6,7 +6,7 @@ const Statusbar = ({
   backgroundColor = "transparent",
                      content = "light-content",
   translucent = true,
-  height = STATUS_BAR_HEIGHT,
+                     height = STATUS_BAR_HEIGHT
 }) => {
   const bg = Platform.OS === "android" ? backgroundColor : backgroundColor;
   const iOsBackgroundColor = Platform.OS === "android" ? "transparent" : bg;
@@ -18,7 +18,7 @@ const Statusbar = ({
     <View
       style={{
         height: height,
-        backgroundColor: iOsBackgroundColor,
+        backgroundColor: iOsBackgroundColor
       }}>
       <StatusBar backgroundColor={bg} translucent={translucent} />
     </View>

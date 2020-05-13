@@ -6,7 +6,6 @@ import styles from "./styles/RNCachedImageStyle";
 import Container from "../components/Container";
 import i18n from "i18n-js";
 
-
 function RNCachedImage(): ReactElement {
   return (
     <Container style={styles.container}>

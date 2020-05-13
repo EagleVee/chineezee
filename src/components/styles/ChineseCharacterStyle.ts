@@ -7,36 +7,36 @@ export default StyleSheet.create({
     height: 350,
     paddingVertical: 20,
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   previousContainer: {
     height: 250,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   nextContainer: {
     height: 250,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   sideButton: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 20
   },
   webViewContainer: {
     width: deviceWidth - 100,
     height: "100%",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   resetButton: {
-    padding: 10,
+    padding: 10
   },
   reset: {
     width: 20,
-    height: 20,
+    height: 20
   },
   sideIcon: {
     width: 10,
-    height: 20,
-  },
+    height: 20
+  }
 });

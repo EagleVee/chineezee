@@ -2,7 +2,7 @@ import React from "react";
 
 type CreateCtx<A> = readonly [
   () => A,
-  React.ProviderExoticComponent<React.ProviderProps<A | undefined>>,
+  React.ProviderExoticComponent<React.ProviderProps<A | undefined>>
 ];
 
 // create context with no upfront defaultValue

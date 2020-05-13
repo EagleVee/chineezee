@@ -17,6 +17,7 @@
     "ios-local": "ENVFILE=.env.local react-native run-ios --simulator=\"iPhone 11 Pro Max\"",
     "ios-secondary": "react-native run-ios --simulator=\"iPhone 11 Pro Max\" --port=8088",
     "start-secondary": "react-native start --port=8088",
+    "reformat-all": "prettier --write \"**/*.ts\" \"**/*.tsx\"",
     "generate-component": "cd src/components && echo > ${FILE}.tsx && cd styles && echo > \"${FILE}Style.ts\" && cd ../../..",
     "generate-container": "cd src/containers && echo > ${FILE}.tsx && cd styles && echo > \"${FILE}Style.ts\" && cd ../../.."
   },

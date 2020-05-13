@@ -4,7 +4,7 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
   Platform,
-  View,
+  View
 } from "react-native";
 import styles from "./styles/ContainerStyle";
 import { STATUS_BAR_HEIGHT } from "../config/Dimens";
@@ -21,7 +21,7 @@ class Container extends PureComponent<Props> {
       style,
       notSafeArea,
       isPadding,
-      paddingStyle,
+      paddingStyle
     } = props;
 
     const padding = isPadding ? paddingStyle : {};

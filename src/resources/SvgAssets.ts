@@ -9572,6 +9572,6 @@ const assets = {
   "40869": require("./svgData/40869.ts"),
   "40886": require("./svgData/40886.ts"),
   "40889": require("./svgData/40889.ts"),
-  "40890": require("./svgData/40890.ts"),
+  "40890": require("./svgData/40890.ts")
 };
 export default assets;

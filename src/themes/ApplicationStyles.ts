@@ -1,8 +1,8 @@
 // This file is for a reusable grouping of Theme items.
 // Similar to an XML fragment layout in Android
 import { ImageStyle, StyleSheet, ViewStyle } from "react-native";
-import {STATUS_BAR_HEIGHT} from "../config/Dimens";
-import {Colors} from "./index";
+import { STATUS_BAR_HEIGHT } from "../config/Dimens";
+import { Colors } from "./index";
 
 interface Style {
   container: ViewStyle;
@@ -12,18 +12,18 @@ interface Style {
 export default StyleSheet.create<Style>({
   container: {
     flex: 1,
-    backgroundColor: Colors.twitterNightMode,
+    backgroundColor: Colors.twitterNightMode
   },
   middle: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   backgroundImage: {
     position: "absolute",
     top: 0,
     left: 0,
     bottom: 0,
-    right: 0,
-  },
+    right: 0
+  }
 });

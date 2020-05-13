@@ -6,7 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
-  Keyboard,
+  Keyboard
 } from "react-native";
 
 import styles from "./styles/StrokeOrderScreenStyle";
@@ -95,8 +95,24 @@ function StrokeOrderScreen(props: Props): ReactElement {
           <Text style={styles.confirmText}>{i18n.t("confirm")}</Text>
         </TouchableOpacity>
         {renderCharacter()}
+        {renderBriefDescription(data[currentIndex])}
       </RNScrollView>
     </Container>
+  );
+}
+
+function renderBriefDescription(character: string): ReactElement {
+  let content = "";
+  // @ts-ignore
+  if (Dictionary[character]) {
+    // @ts-ignore
+    const characterObject = Dictionary[character];
+    content = "Definition: " + characterObject.definition;
+  }
+  return (
+    <View style={styles.definitionContainer}>
+      <Text style={styles.definition}>{content}</Text>
+    </View>
   );
 }
 

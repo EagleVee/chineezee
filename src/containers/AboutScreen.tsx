@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
-  Linking,
+  Linking
 } from "react-native";
 import Container from "../components/Container";
 import styles from "./styles/AboutScreenStyle";
@@ -19,10 +19,8 @@ function AboutScreen(props: Props): ReactElement {
     <Container style={styles.container}>
       <ScrollView>
         <View style={styles.content}>
-          <Text style={styles.title}>Về tác giả / About author</Text>
-          <Text style={styles.name}>
-            Nguyễn Ngọc Anh Vũ (阮玉英武)
-          </Text>
+          <Text style={styles.title}>Về tác giả / About the author</Text>
+          <Text style={styles.name}>Nguyễn Ngọc Anh Vũ (阮玉英武)</Text>
           <Text style={styles.body}>Liên hệ / Contact:</Text>
           <Text style={styles.body}>
             E-mail:{" "}
@@ -42,6 +40,12 @@ function AboutScreen(props: Props): ReactElement {
               github.com/eaglevee
             </Text>
           </Text>
+          <Text style={styles.body}>
+            LinkedIn:{" "}
+            <Text style={styles.bodyLink} selectable onPress={goToLinkedIn}>
+              linkedin.com/in/nnavu/
+            </Text>
+          </Text>
         </View>
       </ScrollView>
     </Container>
@@ -54,6 +58,10 @@ function goToGithub() {
 
 function goToTelegram() {
   Linking.openURL("https://t.me/@eaglevee");
+}
+
+function goToLinkedIn() {
+  Linking.openURL("https://www.linkedin.com/in/nnavu/");
 }
 
 export default AboutScreen;
