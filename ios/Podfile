@@ -39,6 +39,8 @@ target 'chinezee' do
   use_native_modules!
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'ReactNativeAudioToolkit', :path => '../node_modules/@react-native-community/audio-toolkit'
+
 end
 
 target 'chinezee-tvOS' do
