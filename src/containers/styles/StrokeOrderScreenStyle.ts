@@ -54,7 +54,7 @@ export default StyleSheet.create({
   input: {
     width: "100%",
     maxWidth: "100%",
-    height: 150,
+    height: 120,
     paddingHorizontal: 10,
     color: "white",
     fontSize: 18,

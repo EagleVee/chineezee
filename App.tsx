@@ -11,10 +11,8 @@ import { ReactNode } from "react";
 
 import RootProvider from "./src/containers/RootContainer";
 import AppNavigation from "./src/navigation/AppNavigation";
-import SplashScreen from "react-native-splash-screen";
 
 const App: ReactNode = () => {
-  SplashScreen.hide();
   return (
     <RootProvider>
       <AppNavigation />
