@@ -112,7 +112,7 @@ function renderBriefDescription(character: string): ReactElement {
       content += "Pinyin: ";
       for (let i = 0; i < pinyin.length; i++) {
         content += pinyin[i];
-        if (i === pinyin.length) {
+        if (i === pinyin.length - 1) {
           content += "\n";
         } else {
           content += ", ";
