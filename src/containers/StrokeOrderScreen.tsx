@@ -107,7 +107,20 @@ function renderBriefDescription(character: string): ReactElement {
   if (Dictionary[character]) {
     // @ts-ignore
     const characterObject = Dictionary[character];
-    content = "Definition: " + characterObject.definition;
+    const {definition, pinyin} = characterObject;
+    if (pinyin.length > 0) {
+      content += "Pinyin: ";
+      for (let i = 0; i < pinyin.length; i++) {
+        content += pinyin[i];
+        if (i === pinyin.length) {
+          content += "\n";
+        } else {
+          content += ", ";
+        }
+      }
+    }
+
+    content += "Definition: " + definition;
   }
   return (
     <View style={styles.definitionContainer}>
