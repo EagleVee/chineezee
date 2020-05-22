@@ -32,11 +32,12 @@ export default StyleSheet.create({
     justifyContent: "center"
   },
   sideButton: {
+    paddingVertical: 20,
     paddingHorizontal: 20
   },
   sideIcon: {
-    width: 10,
-    height: 20
+    width: 15,
+    height: 30
   },
   flatList: {
     flex: 1
