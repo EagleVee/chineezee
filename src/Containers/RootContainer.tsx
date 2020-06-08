@@ -5,8 +5,8 @@ import i18n from "i18n-js";
 import { I18nManager } from "react-native";
 
 const translationGetters = {
-  vi: () => require("../translations/vi.json"),
-  en: () => require("../translations/en.json")
+  vi: () => require("../Translations/vi.json"),
+  en: () => require("../Translations/en.json")
 };
 
 interface Props {
@@ -23,7 +23,7 @@ const setI18nConfig = () => {
 
   I18nManager.forceRTL(isRTL);
 
-  // set i18n-js config
+  // set i18n-js Config
   i18n.translations = {
     // @ts-ignore
     [languageTag]: translationGetters[languageTag]()

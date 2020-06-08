@@ -2,8 +2,8 @@ import React, { ReactElement, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import styles from "./styles/StrokeOrderScreenStyle";
-import Container from "../components/Container";
+import styles from "./Styles/StrokeOrderScreenStyle";
+import Container from "../Components/Container";
 import i18n from "i18n-js";
 
 interface Props {

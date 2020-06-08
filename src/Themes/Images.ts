@@ -10,7 +10,7 @@ const images = {
   // background: require('../Images/BG.png'),
   // buttonBackground: require('../Images/button-bg.png'),
   // api: require('../Images/Icons/icon-api-testing.png'),
-  // components: require('../Images/Icons/icon-components.png'),
+  // Components: require('../Images/Icons/icon-Components.png'),
   // deviceInfo: require('../Images/Icons/icon-device-information.png'),
   // faq: require('../Images/Icons/faq-icon.png'),
   // home: require('../Images/Icons/icon_home.png'),

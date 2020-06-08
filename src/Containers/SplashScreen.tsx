@@ -1,7 +1,7 @@
 import SplashScreen from "react-native-splash-screen";
 import React, {ReactElement} from "react";
 import {View, Image} from "react-native";
-import {Colors} from "../themes";
+import {Colors} from "../Themes";
 // @ts-ignore
 import Icon from "react-native-vector-icons/Fontisto";
 

@@ -10,12 +10,12 @@ import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
 // @ts-ignore
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import React, { ReactElement } from "react";
-import StrokeOrderScreen from "../containers/StrokeOrderScreen";
-import DictionaryScreen from "../containers/DictionaryScreen";
-import AboutScreen from "../containers/AboutScreen";
+import StrokeOrderScreen from "../Containers/StrokeOrderScreen";
+import DictionaryScreen from "../Containers/DictionaryScreen";
+import AboutScreen from "../Containers/AboutScreen";
 import i18n from "i18n-js";
-import PronunciationScreen from "../containers/PronunciationScreen";
-import {Colors} from "../themes";
+import PronunciationScreen from "../Containers/PronunciationScreen";
+import {Colors} from "../Themes";
 
 export type RootStackParamList = {
   AppTab: ReactElement;

@@ -7,7 +7,7 @@ import {
   View
 } from "react-native";
 import styles from "./styles/ContainerStyle";
-import { STATUS_BAR_HEIGHT } from "../config/Dimens";
+import {STATUS_BAR_HEIGHT} from "../Config/Dimens";
 import StatusBar from "./StatusBar";
 
 class Container extends PureComponent<Props> {

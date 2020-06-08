@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles/RNCachedImageStyle";
-import Container from "../components/Container";
+import Container from ".//Container";
 import i18n from "i18n-js";
 
 function RNCachedImage(): ReactElement {

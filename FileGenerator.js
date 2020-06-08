@@ -121,8 +121,8 @@ const actionContent = fileName => {
 const createComponent = fileName => {
   const content = componentContent(fileName);
   const styleContent = componentStyleContent(fileName);
-  const filePath = `App/Components/${fileName}.js`;
-  const styleFilePath = `App/Components/Styles/${fileName}Style.js`;
+  const filePath = `src/Components/${fileName}.js`;
+  const styleFilePath = `src/Components/Styles/${fileName}Style.js`;
   if (fs.existsSync(filePath) || fs.existsSync(styleFilePath)) {
     throw new Error("File existed!");
   } else {
@@ -134,8 +134,8 @@ const createComponent = fileName => {
 const createContainer = fileName => {
   const content = containerContent(fileName);
   const styleContent = containerStyleContent(fileName);
-  const filePath = `App/Containers/${fileName}.js`;
-  const styleFilePath = `App/Containers/Styles/${fileName}Style.js`;
+  const filePath = `src/Containers/${fileName}.js`;
+  const styleFilePath = `src/Containers/Styles/${fileName}Style.js`;
   if (fs.existsSync(filePath) || fs.existsSync(styleFilePath)) {
     throw new Error("File existed!");
   } else {
@@ -148,9 +148,9 @@ const createProvider = fileName => {
   const provider = providerContent(fileName);
   const action = actionContent(fileName);
   const reducer = reducerContent(fileName);
-  const providerPath = `App/Providers/${fileName}Provider.js`;
-  const actionPath = `App/ReduxHooks/${fileName}Actions.js`;
-  const reducerPath = `App/ReduxHooks/${fileName}Reducer.js`;
+  const providerPath = `src/Providers/${fileName}Provider.js`;
+  const actionPath = `src/ReduxHooks/${fileName}Actions.js`;
+  const reducerPath = `src/ReduxHooks/${fileName}Reducer.js`;
   if (
     fs.existsSync(providerPath) ||
     fs.existsSync(actionPath) ||

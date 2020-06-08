@@ -3,9 +3,9 @@ import { View } from "react-native";
 import WebView from "react-native-webview";
 import styles from "./styles/ChineseCharacterStyle";
 import i18n from "i18n-js";
-import SvgAssets from "../resources/SvgAssets";
-import {WIDTH_RATIO} from "../config/Dimens";
-import {Colors} from "../themes";
+import SvgAssets from "../Resources/SvgAssets";
+import {WIDTH_RATIO} from "../Config/Dimens";
+import {Colors} from "../Themes";
 
 interface Props {
   character: string;

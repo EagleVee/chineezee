@@ -6,8 +6,8 @@ import {
   ScrollView,
   Linking
 } from "react-native";
-import Container from "../components/Container";
-import styles from "./styles/AboutScreenStyle";
+import Container from "../Components/Container";
+import styles from "./Styles/AboutScreenStyle";
 import i18n from "i18n-js";
 
 interface Props {

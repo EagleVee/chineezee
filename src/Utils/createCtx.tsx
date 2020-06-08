@@ -16,7 +16,7 @@ function createCtx<A>(): CreateCtx<A> {
     return c;
   }
 
-  // make TypeScript infer a tuple, not an array of union types
+  // make TypeScript infer a tuple, not an array of union Types
   return [useCtx, ctx.Provider] as const;
 }
 
