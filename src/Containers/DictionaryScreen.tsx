@@ -104,7 +104,7 @@ function DictionaryScreen(props: Props): ReactElement {
             </View>
           </TouchableWithoutFeedback>
           <Text style={styles.changeButtonText}>
-            {isSimplified ? "Simplified" : "Traditional"}
+            {isSimplified ? i18n.t("simplified") : i18n.t("traditional")}
           </Text>
         </View>
       </View>

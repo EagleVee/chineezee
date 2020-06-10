@@ -9,6 +9,7 @@
   "stroke-placeholder": "Insert some characters...",
   "dictionary-placeholder": "Search for words, eg: 你好，ni3 hao3,...",
   "confirm": "Confirm",
-  "constructing": "Developing... :("
-
+  "constructing": "Developing... :(",
+  "simplified": "Simplified",
+  "traditional": "Traditional"
 }

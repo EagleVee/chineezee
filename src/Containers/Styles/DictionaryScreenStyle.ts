@@ -13,7 +13,7 @@ export default StyleSheet.create({
   },
   textInputWrapper: {
     paddingHorizontal: 16,
-    flexDirection: "row",
+    flexDirection: "row"
   },
   textInput: {
     fontSize: 16,
@@ -53,7 +53,9 @@ export default StyleSheet.create({
     backgroundColor: "white",
     width: "100%"
   },
-  changeButtonWrapper: {},
+  changeButtonWrapper: {
+    alignItems: "flex-end"
+  },
   changeButtonContainer: {
     width: 60,
     height: 30,
