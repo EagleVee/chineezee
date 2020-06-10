@@ -9,8 +9,6 @@ const translationGetters = {
   en: () => require("../Translations/en.json")
 };
 
-import cedict from "../Resources/cedict.json";
-
 interface Props {
   children?: React.ReactElement;
 }

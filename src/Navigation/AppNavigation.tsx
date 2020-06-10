@@ -22,6 +22,7 @@ import WordDetailScreen from "../Containers/WordDetailScreen";
 export type RootStackParamList = {
   AppTab: ReactElement;
   SplashScreen: ReactElement;
+  WordDetailScreen: ReactElement;
 };
 
 const Tab = createBottomTabNavigator();
