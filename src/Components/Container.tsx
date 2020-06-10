@@ -6,7 +6,7 @@ import {
   Platform,
   View
 } from "react-native";
-import styles from "./styles/ContainerStyle";
+import styles from "./Styles/ContainerStyle";
 import {STATUS_BAR_HEIGHT} from "../Config/Dimens";
 import StatusBar from "./StatusBar";
 

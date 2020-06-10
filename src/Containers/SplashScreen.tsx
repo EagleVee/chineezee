@@ -1,19 +1,37 @@
-import SplashScreen from "react-native-splash-screen";
-import React, {ReactElement} from "react";
-import {View, Image} from "react-native";
-import {Colors} from "../Themes";
+import React, { ReactElement, useContext, useEffect } from "react";
+import { View, Image } from "react-native";
+import { Colors } from "../Themes/index";
 // @ts-ignore
 import Icon from "react-native-vector-icons/Fontisto";
+import { DictionaryContext } from "../Providers/DictionaryProvider";
+import simplified from "../Resources/simplified.json";
+import traditional from "../Resources/traditional.json";
 
 interface Props {
   navigation: any;
 }
 
-export default function Screen(props: Props): ReactElement {
-  props.navigation.navigate("AppTab");
+export default function SplashScreen(props: Props): ReactElement {
+  const dictionaryContext = useContext(DictionaryContext);
+  const { setTraditionalWords, setSimplifiedWords } = dictionaryContext;
+
+  useEffect(() => {
+    const startupDictionary = async (callback: () => void) => {
+      const simplifiedWords = Object.keys(simplified);
+      const traditionalWords = Object.keys(traditional);
+      await setSimplifiedWords(simplifiedWords);
+      await setTraditionalWords(traditionalWords);
+      await callback();
+    };
+
+    startupDictionary(() => {
+      props.navigation.navigate("AppTab");
+    });
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Icon name="language" color={Colors.twitterNightMode} size={30}/>
+      <Icon name="language" color={Colors.twitterNightMode} size={30} />
     </View>
   );
 }

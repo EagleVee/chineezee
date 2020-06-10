@@ -56,7 +56,7 @@ function StrokeOrderScreen(props: Props): ReactElement {
             />
           </TouchableOpacity>
         </View>
-        <ChineseCharacter character={data[currentIndex]}/>
+        <ChineseCharacter character={data[currentIndex]} />
         <View style={styles.nextContainer}>
           <TouchableOpacity
             onPress={() => {
@@ -78,7 +78,7 @@ function StrokeOrderScreen(props: Props): ReactElement {
   }
 
   return (
-    <Container style={styles.container}>
+    <Container style={styles.tabContainer}>
       <RNScrollView>
         <View style={styles.inputContainer}>
           <TextInput
@@ -107,7 +107,7 @@ function renderBriefDescription(character: string): ReactElement {
   if (Dictionary[character]) {
     // @ts-ignore
     const characterObject = Dictionary[character];
-    const {definition, pinyin} = characterObject;
+    const { definition, pinyin } = characterObject;
     if (pinyin.length > 0) {
       content += "Pinyin: ";
       for (let i = 0; i < pinyin.length; i++) {

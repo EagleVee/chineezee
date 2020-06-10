@@ -2,7 +2,7 @@ import React, {FunctionComponent, ReactElement, ReactNode} from "react";
 import {ScrollView} from "react-native";
 
 interface Props {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export default function RNScrollView(props: Props): ReactElement {

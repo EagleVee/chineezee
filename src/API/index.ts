@@ -16,6 +16,8 @@ const instance = axios.create({
   headers: {}
 });
 
+import Auth from "./Auth";
+
 const checkStatus = (response: any) => {
   console.log("RESPONSE:", response);
   if (response.status === STATUS_OK) {
@@ -74,4 +76,8 @@ export const DELETE = (url: string, config = {}) => {
     .delete(url, config)
     .then(checkStatus)
     .catch(logError);
+};
+
+export default {
+  Auth
 };

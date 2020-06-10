@@ -16,7 +16,7 @@ interface Props {
 
 function AboutScreen(props: Props): ReactElement {
   return (
-    <Container style={styles.container}>
+    <Container style={styles.tabContainer}>
       <ScrollView>
         <View style={styles.content}>
           <Text style={styles.title}>Về tác giả / About the author</Text>

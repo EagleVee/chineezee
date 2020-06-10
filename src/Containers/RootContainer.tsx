@@ -1,13 +1,15 @@
-import { AppProvider } from "./AppProvider";
 import React, { useState } from "react";
 import * as RNLocalize from "react-native-localize";
 import i18n from "i18n-js";
 import { I18nManager } from "react-native";
+import AppProvider from "../Providers";
 
 const translationGetters = {
   vi: () => require("../Translations/vi.json"),
   en: () => require("../Translations/en.json")
 };
+
+import cedict from "../Resources/cedict.json";
 
 interface Props {
   children?: React.ReactElement;
@@ -30,9 +32,11 @@ const setI18nConfig = () => {
   };
   i18n.locale = languageTag;
 };
+
 // Add providers here
 const RootProvider = ({ children }: Props): React.ReactElement => {
   setI18nConfig();
+  // @ts-ignore
   return <AppProvider>{children}</AppProvider>;
 };
 

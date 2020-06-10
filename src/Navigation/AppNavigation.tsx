@@ -15,15 +15,14 @@ import DictionaryScreen from "../Containers/DictionaryScreen";
 import AboutScreen from "../Containers/AboutScreen";
 import i18n from "i18n-js";
 import PronunciationScreen from "../Containers/PronunciationScreen";
-import {Colors} from "../Themes";
+import { Colors } from "../Themes/index";
+import SplashScreen from "../Containers/SplashScreen";
+import WordDetailScreen from "../Containers/WordDetailScreen";
 
 export type RootStackParamList = {
   AppTab: ReactElement;
+  SplashScreen: ReactElement;
 };
-
-export type RootStackNavigationProps<
-  T extends keyof RootStackParamList
-> = StackNavigationProp<RootStackParamList, T>;
 
 const Tab = createBottomTabNavigator();
 
@@ -48,8 +47,8 @@ function AppTab(): React.ReactElement {
         component={StrokeOrderScreen}
         options={{
           title: i18n.t("tab-stroke"),
-          tabBarIcon: ({color, size}) => (
-            <FontAwesome5Icon name={"pen-nib"} color={color} size={size}/>
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome5Icon name={"pen-nib"} color={color} size={size} />
           )
         }}
       />
@@ -58,7 +57,7 @@ function AppTab(): React.ReactElement {
         component={DictionaryScreen}
         options={{
           title: i18n.t("tab-dictionary"),
-          tabBarIcon: ({color, size}) => (
+          tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcon
               name={"dictionary"}
               color={color}
@@ -72,8 +71,8 @@ function AppTab(): React.ReactElement {
         component={PronunciationScreen}
         options={{
           title: i18n.t("tab-pronunciation"),
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcon name={"voice"} color={color} size={size}/>
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcon name={"voice"} color={color} size={size} />
           )
         }}
       />
@@ -82,8 +81,8 @@ function AppTab(): React.ReactElement {
         component={AboutScreen}
         options={{
           title: i18n.t("tab-about"),
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcon name={"account"} color={color} size={size}/>
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcon name={"account"} color={color} size={size} />
           )
         }}
       />
@@ -94,8 +93,14 @@ function AppTab(): React.ReactElement {
 function AppNavigation(): React.ReactElement {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="AppTab">
-        <Stack.Screen name="AppTab" component={AppTab} />
+      <Stack.Navigator headerMode="none" initialRouteName="SplashScreen">
+        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen
+          name="AppTab"
+          component={AppTab}
+          options={{ gestureEnabled: false }}
+        />
+        <Stack.Screen name="WordDetailScreen" component={WordDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,11 +1,11 @@
 import React, {ReactElement} from "react";
 import { View } from "react-native";
 import WebView from "react-native-webview";
-import styles from "./styles/ChineseCharacterStyle";
+import styles from "./Styles/ChineseCharacterStyle";
 import i18n from "i18n-js";
 import SvgAssets from "../Resources/SvgAssets";
 import {WIDTH_RATIO} from "../Config/Dimens";
-import {Colors} from "../Themes";
+import {Colors} from "../Themes/index";
 
 interface Props {
   character: string;

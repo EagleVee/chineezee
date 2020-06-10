@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
+    "start-max": "node --max-old-space-size=8192 node_modules/react-native/local-cli/cli.js start",
     "android:logcat": "$ANDROID_HOME/platform-tools/adb logcat *:S ReactNative:V ReactNativeJS:V",
     "android-dev": "react-native run-android",
     "ios-8-plus": "react-native run-ios --simulator=\"iPhone 8 Plus\"",

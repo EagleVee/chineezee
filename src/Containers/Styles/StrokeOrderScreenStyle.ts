@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import {ApplicationStyles, Colors} from "../../Themes";
-import {deviceWidth, WIDTH_RATIO} from "../../Config/Dimens";
+import { ApplicationStyles, Colors } from "../../Themes/index";
+import { deviceWidth, WIDTH_RATIO } from "../../Config/Dimens";
 
 export default StyleSheet.create({
   ...ApplicationStyles,

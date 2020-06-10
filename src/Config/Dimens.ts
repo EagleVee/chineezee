@@ -7,9 +7,9 @@ const NOTCH_STATUS_BAR_HEIGHT = 44;
 
 export const hasNotch = DeviceInfo.hasNotch();
 
-export const STATUS_BAR_HEIGHT = hasNotch
-  ? NOTCH_STATUS_BAR_HEIGHT
-  : NORMAL_STATUS_BAR_HEIGHT;
+export const STATUS_BAR_HEIGHT = Number(
+  hasNotch ? NOTCH_STATUS_BAR_HEIGHT : NORMAL_STATUS_BAR_HEIGHT
+);
 
 export const deviceWidth = Dimensions.get("window").width;
 export const deviceHeight = Dimensions.get("window").height;

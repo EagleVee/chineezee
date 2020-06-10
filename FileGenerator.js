@@ -1,26 +1,22 @@
 const fs = require("fs");
 
 const componentContent = fileName => {
-  return `import React, { Component } from "react";
+  return `import React, { ReactElement } from "react";
 import { View, Text } from "react-native";
 import styles from "./Styles/${fileName}Style";
 import PropTypes from "prop-types";
 
-export default function ${fileName}(props) {
+interface Props {
+  onPress: () => {};
+}
+
+export default function ${fileName}(props: Props): ReactElement {
   return (
     <View style={styles.container}>
       <Text>${fileName}</Text>
     </View>
   );
-}
-
-${fileName}.propTypes = {
-  onPress: PropTypes.func.isRequired
-};
-
-${fileName}.defaultProps = {
-  onPress: () => {}
-};`;
+}`;
 };
 
 const componentStyleContent = fileName => {
@@ -28,7 +24,7 @@ const componentStyleContent = fileName => {
 import { ApplicationStyles, Colors } from "../../Themes";
   
 export default StyleSheet.create({
-  ...ApplicationStyles.component,
+  ...ApplicationStyles,
   container: {
     flex: 1,
   },
@@ -36,13 +32,17 @@ export default StyleSheet.create({
 };
 
 const containerContent = fileName => {
-  return `import React, { Component } from "react";
+  return `import React, { ReactElement } from "react";
 import { View, Text } from "react-native";
 import styles from "./Styles/${fileName}Style";
 import Container from "../Components/Container";
 import RNScrollView from "../Components/RNScrollView";
 
-export default function ${fileName}(props) {
+interface Props {
+  navigation: any;
+}
+
+export default function ${fileName}(props: Props): ReactElement {
   return (
     <Container style={styles.container} notSafeArea isPadding={false}>
       <RNScrollView>
@@ -57,21 +57,25 @@ const containerStyleContent = fileName => {
   return `import { StyleSheet } from "react-native";
 import { ApplicationStyles, Colors } from "../../Themes";  
 export default StyleSheet.create({
-  ...ApplicationStyles.screen,
+  ...ApplicationStyles,
 });`;
 };
 
 const providerContent = fileName => {
-  return `import initialState, { ${fileName}Reducer } from "../ReduxHooks/${fileName}Reducer";
-import React, { createContext, useReducer } from "react";
-import { ${fileName}Actions } from "../ReduxHooks/${fileName}Actions";
+  return `import initialState, { ${fileName}Reducer, ${fileName}Actions } from "../ReduxHooks/${fileName}Redux";
+import React, { createContext, useReducer, Dispatch, ReactNode } from "react";
 import API from "../API";
-import { put } from "./Dispatch";
+import { put } from "./index";
+import { Action } from "../Types";
 
 export const ${fileName}Context = createContext({});
 export const ${fileName}Provider = ${fileName}Context.Provider;
 
-export default function Wrapper(props) {
+interface Props {
+  children?: ReactNode;
+}
+
+export default function Wrapper(props: Props) {
   const [state, dispatch] = useReducer(${fileName}Reducer, initialState);
   const actions = mapActionsToDispatch(dispatch);
   return (
@@ -80,29 +84,33 @@ export default function Wrapper(props) {
     </${fileName}Provider>
   );
 }
-export const mapActionsToDispatch = dispatch => {
+export const mapActionsToDispatch = (dispatch: Dispatch<Action>) => {
   return {
     doSomething: doSomething(dispatch)
   };
 };
 
-const doSomething = dispatch => async () => {
+const doSomething = (dispatch: Dispatch<Action>) => async () => {
   await put(dispatch, ${fileName}Actions.doSomething, "Some other things");
 };
 `;
 };
 
 const reducerContent = fileName => {
-  return `import { ${fileName}Actions } from "./${fileName}Actions";
+  return `import { Action } from "../Types";
 
 export const initialState = {
   something: "Somethings"
 };
 
-export const ${fileName}Reducer = (state, action) => {
+export const ${fileName}Actions = {
+  doSomething: "DO_SOMETHING"
+};
+
+export const ${fileName}Reducer = (state: object, action: Action) => {
   switch (action.type) {
     case ${fileName}Actions.doSomething:
-      return { ...state, something: payload }
+      return { ...state, something: action.payload };
     default:
       return state;
   }
@@ -110,12 +118,6 @@ export const ${fileName}Reducer = (state, action) => {
 
 export default initialState;
 `;
-};
-
-const actionContent = fileName => {
-  return `export const ${fileName}Actions = {
-  doSomething: "DO_SOMETHING"
-};`;
 };
 
 const createComponent = fileName => {
@@ -134,8 +136,8 @@ const createComponent = fileName => {
 const createContainer = fileName => {
   const content = containerContent(fileName);
   const styleContent = containerStyleContent(fileName);
-  const filePath = `src/Containers/${fileName}.js`;
-  const styleFilePath = `src/Containers/Styles/${fileName}Style.js`;
+  const filePath = `src/Containers/${fileName}.tsx`;
+  const styleFilePath = `src/Containers/Styles/${fileName}Style.ts`;
   if (fs.existsSync(filePath) || fs.existsSync(styleFilePath)) {
     throw new Error("File existed!");
   } else {
@@ -146,20 +148,13 @@ const createContainer = fileName => {
 
 const createProvider = fileName => {
   const provider = providerContent(fileName);
-  const action = actionContent(fileName);
   const reducer = reducerContent(fileName);
-  const providerPath = `src/Providers/${fileName}Provider.js`;
-  const actionPath = `src/ReduxHooks/${fileName}Actions.js`;
-  const reducerPath = `src/ReduxHooks/${fileName}Reducer.js`;
-  if (
-    fs.existsSync(providerPath) ||
-    fs.existsSync(actionPath) ||
-    fs.existsSync(reducerPath)
-  ) {
+  const providerPath = `src/Providers/${fileName}Provider.tsx`;
+  const reducerPath = `src/ReduxHooks/${fileName}Redux.ts`;
+  if (fs.existsSync(providerPath) || fs.existsSync(reducerPath)) {
     throw new Error("File existed!");
   } else {
     writeToOutput(providerPath, provider, () => {});
-    writeToOutput(actionPath, action, () => {});
     writeToOutput(reducerPath, reducer, () => {});
   }
 };
