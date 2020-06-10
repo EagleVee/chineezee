@@ -123,8 +123,8 @@ export default initialState;
 const createComponent = fileName => {
   const content = componentContent(fileName);
   const styleContent = componentStyleContent(fileName);
-  const filePath = `src/Components/${fileName}.js`;
-  const styleFilePath = `src/Components/Styles/${fileName}Style.js`;
+  const filePath = `src/Components/${fileName}.tsx`;
+  const styleFilePath = `src/Components/Styles/${fileName}Style.ts`;
   if (fs.existsSync(filePath) || fs.existsSync(styleFilePath)) {
     throw new Error("File existed!");
   } else {

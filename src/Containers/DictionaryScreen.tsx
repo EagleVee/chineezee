@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   TextInput,
   FlatList,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Switch
 } from "react-native";
 
 import styles from "./Styles/DictionaryScreenStyle";
@@ -15,6 +16,7 @@ import { DictionaryContext } from "../Providers/DictionaryProvider";
 import KeyExtractor from "../Common/KeyExtractor";
 import traditional from "../Resources/traditional.json";
 import simplified from "../Resources/simplified.json";
+import { Colors } from "../Themes";
 
 interface Props {
   navigation: any;
@@ -74,35 +76,13 @@ function DictionaryScreen(props: Props): ReactElement {
           />
         </View>
         <View style={styles.changeButtonWrapper}>
-          <TouchableWithoutFeedback
-            onPress={() => {
+          <Switch
+            trackColor={{ false: Colors.twitterBlue, true: Colors.twitterBlue }}
+            value={!isSimplified}
+            onValueChange={() => {
               setIsSimplified(!isSimplified);
-            }}>
-            <View
-              style={
-                isSimplified
-                  ? styles.changeButtonContainer
-                  : [
-                      styles.changeButtonContainer,
-                      { justifyContent: "flex-end" }
-                    ]
-              }>
-              <View
-                style={
-                  isSimplified
-                    ? styles.changeButton
-                    : [styles.changeButton, { opacity: 0 }]
-                }
-              />
-              <View
-                style={
-                  !isSimplified
-                    ? styles.changeButton
-                    : [styles.changeButton, { opacity: 0 }]
-                }
-              />
-            </View>
-          </TouchableWithoutFeedback>
+            }}
+          />
           <Text style={styles.changeButtonText}>
             {isSimplified ? i18n.t("simplified") : i18n.t("traditional")}
           </Text>

@@ -54,7 +54,8 @@ export default StyleSheet.create({
     width: "100%"
   },
   changeButtonWrapper: {
-    alignItems: "flex-end"
+    width: 60,
+    alignItems: "center"
   },
   changeButtonContainer: {
     width: 60,
@@ -74,6 +75,7 @@ export default StyleSheet.create({
   changeButtonText: {
     marginTop: 5,
     fontSize: 12,
-    color: "white"
+    color: "white",
+    textAlign: "center"
   }
 });

@@ -1,4 +1,4 @@
-import React, {ReactElement} from "react";
+import React, { ReactElement } from "react";
 import {
   View,
   Text,
@@ -9,19 +9,26 @@ import {
 import Container from "../Components/Container";
 import styles from "./Styles/AboutScreenStyle";
 import i18n from "i18n-js";
+import CVHeader from "../Components/CVHeader";
 
 interface Props {
   navigation: any;
 }
 
 function AboutScreen(props: Props): ReactElement {
+  const { navigation } = props;
   return (
-    <Container style={styles.tabContainer}>
+    <Container style={styles.container} isPadding={false} notSafeArea>
+      <CVHeader
+        title={i18n.t("about")}
+        leftOnPress={() => {
+          navigation.goBack();
+        }}
+      />
       <ScrollView>
         <View style={styles.content}>
-          <Text style={styles.title}>Về tác giả / About the author</Text>
           <Text style={styles.name}>Nguyễn Ngọc Anh Vũ (阮玉英武)</Text>
-          <Text style={styles.body}>Liên hệ / Contact:</Text>
+          <Text style={styles.body}>{i18n.t("contact")}</Text>
           <Text style={styles.body}>
             E-mail:{" "}
             <Text style={styles.bodyLink} selectable>
@@ -43,7 +50,7 @@ function AboutScreen(props: Props): ReactElement {
           <Text style={styles.body}>
             LinkedIn:{" "}
             <Text style={styles.bodyLink} selectable onPress={goToLinkedIn}>
-              linkedin.com/in/nnavu/
+              linkedin.com/in/nnavu
             </Text>
           </Text>
         </View>

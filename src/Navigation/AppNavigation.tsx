@@ -18,11 +18,13 @@ import PronunciationScreen from "../Containers/PronunciationScreen";
 import { Colors } from "../Themes/index";
 import SplashScreen from "../Containers/SplashScreen";
 import WordDetailScreen from "../Containers/WordDetailScreen";
+import SettingScreen from "../Containers/SettingScreen";
 
 export type RootStackParamList = {
   AppTab: ReactElement;
   SplashScreen: ReactElement;
   WordDetailScreen: ReactElement;
+  AboutScreen: ReactElement;
 };
 
 const Tab = createBottomTabNavigator();
@@ -78,12 +80,16 @@ function AppTab(): React.ReactElement {
         }}
       />
       <Tab.Screen
-        name="AboutScreen"
-        component={AboutScreen}
+        name="SettingsScreen"
+        component={SettingScreen}
         options={{
-          title: i18n.t("tab-about"),
+          title: i18n.t("tab-settings"),
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcon name={"account"} color={color} size={size} />
+            <MaterialCommunityIcon
+              name={"settings"}
+              color={color}
+              size={size}
+            />
           )
         }}
       />
@@ -102,6 +108,7 @@ function AppNavigation(): React.ReactElement {
           options={{ gestureEnabled: false }}
         />
         <Stack.Screen name="WordDetailScreen" component={WordDetailScreen} />
+        <Stack.Screen name="AboutScreen" component={AboutScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
