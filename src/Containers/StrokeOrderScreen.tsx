@@ -77,6 +77,34 @@ function StrokeOrderScreen(props: Props): ReactElement {
     );
   }
 
+  function renderBriefDescription(character: string): ReactElement {
+    let content = "";
+    // @ts-ignore
+    if (Dictionary[character]) {
+      // @ts-ignore
+      const characterObject = Dictionary[character];
+      const { definition, pinyin } = characterObject;
+      if (pinyin.length > 0) {
+        content += "Pinyin: ";
+        for (let i = 0; i < pinyin.length; i++) {
+          content += pinyin[i];
+          if (i === pinyin.length - 1) {
+            content += "\n";
+          } else {
+            content += ", ";
+          }
+        }
+      }
+
+      content += "Definition: " + definition;
+    }
+    return (
+      <View style={styles.definitionContainer}>
+        <Text style={styles.definition}>{content}</Text>
+      </View>
+    );
+  }
+
   return (
     <Container style={styles.tabContainer}>
       <RNScrollView>
@@ -98,34 +126,6 @@ function StrokeOrderScreen(props: Props): ReactElement {
         {renderBriefDescription(data[currentIndex])}
       </RNScrollView>
     </Container>
-  );
-}
-
-function renderBriefDescription(character: string): ReactElement {
-  let content = "";
-  // @ts-ignore
-  if (Dictionary[character]) {
-    // @ts-ignore
-    const characterObject = Dictionary[character];
-    const { definition, pinyin } = characterObject;
-    if (pinyin.length > 0) {
-      content += "Pinyin: ";
-      for (let i = 0; i < pinyin.length; i++) {
-        content += pinyin[i];
-        if (i === pinyin.length - 1) {
-          content += "\n";
-        } else {
-          content += ", ";
-        }
-      }
-    }
-
-    content += "Definition: " + definition;
-  }
-  return (
-    <View style={styles.definitionContainer}>
-      <Text style={styles.definition}>{content}</Text>
-    </View>
   );
 }
 

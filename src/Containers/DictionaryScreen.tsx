@@ -40,7 +40,7 @@ function DictionaryScreen(props: Props): ReactElement {
       search();
       setDebounce(now);
     }
-  }, [searchText]);
+  }, [searchText, isSimplified]);
 
   const search = () => {
     const words = isSimplified ? simplifiedWords : traditionalWords;
@@ -78,6 +78,7 @@ function DictionaryScreen(props: Props): ReactElement {
         <View style={styles.changeButtonWrapper}>
           <Switch
             trackColor={{ false: Colors.twitterBlue, true: Colors.twitterBlue }}
+            thumbColor="white"
             value={!isSimplified}
             onValueChange={() => {
               setIsSimplified(!isSimplified);

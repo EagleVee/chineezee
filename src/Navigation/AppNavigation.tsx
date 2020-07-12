@@ -1,5 +1,4 @@
 import {
-  StackNavigationProp,
   createStackNavigator
 } from "@react-navigation/stack";
 
@@ -35,6 +34,7 @@ function AppTab(): React.ReactElement {
   return (
     <Tab.Navigator
       initialRouteName="StrokeOrderScreen"
+      backBehavior="none"
       tabBarOptions={{
         style: {
           backgroundColor: Colors.twitterNightMode

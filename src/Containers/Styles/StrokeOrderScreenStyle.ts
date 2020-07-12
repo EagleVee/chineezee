@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { ApplicationStyles, Colors } from "../../Themes/index";
 import { deviceWidth, WIDTH_RATIO } from "../../Config/Dimens";
 
@@ -44,20 +44,22 @@ export default StyleSheet.create({
   },
   flatListContent: {},
   inputContainer: {
-    height: 120,
-    alignItems: "center",
-    justifyContent: "flex-start",
-    backgroundColor: Colors.twitterInput,
-    paddingVertical: 5,
-    borderRadius: 5,
-    marginHorizontal: 10
+    paddingVertical: 10,
+    paddingHorizontal: 10
   },
   input: {
-    width: "100%",
-    maxWidth: "100%",
+    borderRadius: 12,
+    backgroundColor: Colors.twitterInput,
+    width: deviceWidth - 20,
+    maxWidth: deviceWidth - 20,
     height: 120,
     paddingHorizontal: 10,
+    paddingVertical: Platform.select({
+      ios: 10,
+      android: 5
+    }),
     color: "white",
+    textAlignVertical: "top",
     fontSize: 18
   },
   confirmButton: {
