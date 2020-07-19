@@ -34,7 +34,7 @@
     "axios": "^0.19.2",
     "hanzi-writer": "^2.2.2",
     "i18n-js": "^3.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-config": "^0.12.0",
