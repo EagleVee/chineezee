@@ -1,29 +1,21 @@
-import React, { Dispatch, ReactNode } from "react";
-import LanguageProvider from "./LanguageProvider";
-import DictionaryProvider from "./DictionaryProvider";
-import { Action } from "../Types";
+import React, { createContext, ReactElement, useReducer } from "react";
+import { useActions } from "./Actions";
+import { initialState, reducer } from "./Reducers";
 
-export interface WithChildrenProps {
-  children: ReactNode;
+export const AppContext = createContext({
+  state: initialState,
+  actions: useActions(initialState, () => {}),
+  dispatch: () => {}
+});
+
+export default function AppProvider({ children }: any): ReactElement {
+  // @ts-ignore
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const actions = useActions(state, dispatch);
+  return (
+    // @ts-ignore
+    <AppContext.Provider value={{ state, dispatch, actions }}>
+      {children}
+    </AppContext.Provider>
+  );
 }
-
-export function pack(
-  children: ReactNode = null,
-  ...components: any
-): ReactNode {
-  if (!components.length) {
-    return children;
-  }
-
-  const [Component, ...rest] = components;
-
-  return <Component>{pack(children, ...rest)}</Component>;
-}
-
-export function createPack(...components: any): ReactNode {
-  return function PackComponent({ children }: WithChildrenProps): ReactNode {
-    return pack(children, ...components);
-  };
-}
-
-export default createPack(LanguageProvider, DictionaryProvider);

@@ -71,6 +71,32 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Muli-Black.ttf</string>
+		<string>Muli-BlackItalic.ttf</string>
+		<string>Muli-Bold.ttf</string>
+		<string>Muli-BoldItalic.ttf</string>
+		<string>Muli-ExtraBold.ttf</string>
+		<string>Muli-ExtraBoldItalic.ttf</string>
+		<string>Muli-ExtraLight.ttf</string>
+		<string>Muli-ExtraLightItalic.ttf</string>
+		<string>Muli-Light.ttf</string>
+		<string>Muli-LightItalic.ttf</string>
+		<string>Muli-Regular.ttf</string>
+		<string>Muli-RegularItalic.ttf</string>
+		<string>Muli-SemiBold.ttf</string>
+		<string>Muli-SemiBoldItalic.ttf</string>
+		<string>Roboto-Black.ttf</string>
+		<string>Roboto-BlackItalic.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-BoldItalic.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-LightItalic.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-MediumItalic.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-RegularItalic.ttf</string>
+		<string>Roboto-Thin.ttf</string>
+		<string>Roboto-ThinItalic.ttf</string>
 	</array>
 </dict>
 </plist>

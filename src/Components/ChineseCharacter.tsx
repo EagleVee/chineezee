@@ -1,19 +1,21 @@
-import React, {ReactElement} from "react";
+import React, { ReactElement } from "react";
 import { View } from "react-native";
 import WebView from "react-native-webview";
 import styles from "./Styles/ChineseCharacterStyle";
 import i18n from "i18n-js";
-import SvgAssets from "../Resources/SvgAssets";
-import {WIDTH_RATIO} from "../Config/Dimens";
-import {Colors} from "../Themes/index";
+// import SvgAssets from "../Resources/SvgAssets";
+import { WIDTH_RATIO } from "../Config/Dimens";
+import { Colors } from "../Themes/index";
 
 interface Props {
   character: string;
+  svg: string;
 }
 
 export default function ChineseCharacter(props: Props): ReactElement {
-  const { character } = props;
-  const html = getHtmlFromCharacter(character);
+  const { character, svg } = props;
+  console.log(svg);
+  const html = getHtmlFromData(svg);
   return (
     <View style={styles.webViewContainer}>
       <WebView
@@ -30,20 +32,8 @@ export default function ChineseCharacter(props: Props): ReactElement {
   );
 }
 
-function getHtmlFromCharacter(character: string): string {
-  let svg = defaultSvg;
-  if (character) {
-    const charCode = character.charCodeAt(0);
-    // @ts-ignore
-    if (SvgAssets[charCode]) {
-      // @ts-ignore
-      svg = SvgAssets[charCode];
-    } else {
-      svg = defaultSvg;
-    }
-  } else {
-    svg = defaultSvg;
-  }
+function getHtmlFromData(svg: string): string {
+  const characterData = svg ? svg : defaultSvg;
   return `
     <html>
       <head>
@@ -56,7 +46,7 @@ function getHtmlFromCharacter(character: string): string {
       <body>
         <div class="target-container">
             <div id="target">
-                ${svg}
+                ${characterData}
             </div>
         </div>
         <div class="stroke-reset-container">
@@ -106,6 +96,83 @@ function getHtmlFromCharacter(character: string): string {
     </html>
   `;
 }
+
+// function getHtmlFromCharacter(character: string): string {
+//   let svg = defaultSvg;
+//   if (character) {
+//     const charCode = character.charCodeAt(0);
+//     // @ts-ignore
+//     if (SvgAssets[charCode]) {
+//       // @ts-ignore
+//       svg = SvgAssets[charCode];
+//     } else {
+//       svg = defaultSvg;
+//     }
+//   } else {
+//     svg = defaultSvg;
+//   }
+//   return `
+//     <html>
+//       <head>
+//         <meta charset="utf-8" />
+//         <meta name="viewport" content="width=device-width, initial-scale=1" />
+//         <style>
+//             ${css}
+//         </style>
+//       </head>
+//       <body>
+//         <div class="target-container">
+//             <div id="target">
+//                 ${svg}
+//             </div>
+//         </div>
+//         <div class="stroke-reset-container">
+//           <button
+//            onclick="reset();"
+//            class="stroke-reset"
+//            >${i18n.t("stroke-reset")}</button>
+//         </div>
+//         <script>
+//           const clipPaths = document.getElementsByTagName("clipPath");
+//           const parentNode = clipPaths[0].parentNode;
+//           const paths = document.getElementsByTagName("path");
+//           let animationDuration = 0;
+//           for (let path of paths) {
+//             if (path.id.length > 0) {
+//               const pathAnimationDuration = window.getComputedStyle(path)
+//                 .animationDuration;
+//               const duration = Number(
+//                 pathAnimationDuration.substring(
+//                   0,
+//                   pathAnimationDuration.length - 1,
+//                 ),
+//               );
+//               animationDuration = animationDuration + duration;
+//             }
+//           }
+//
+//           let loopAnimation = setInterval(function() {
+//               removeAndAppend();
+//           }, (animationDuration + 0.3) * 1000);
+//
+//           function removeAndAppend() {
+//             const content = parentNode.innerHTML;
+//             parentNode.innerHTML = "";
+//             parentNode.innerHTML = content;
+//           }
+//
+//           function reset() {
+//             removeAndAppend();
+//             clearInterval(loopAnimation);
+//             loopAnimation = setInterval(function() {
+//             removeAndAppend();
+//             }, (animationDuration + 0.3) * 1000);
+//           }
+//         </script>
+//       </body>
+//     </html>
+//   `;
+// }
 
 const width = 250 * WIDTH_RATIO;
 const height = 235 * WIDTH_RATIO;

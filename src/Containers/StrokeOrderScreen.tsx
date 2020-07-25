@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -17,6 +17,7 @@ import IconLeft from "../Resources/Images/Icons/icon_arrow_left.png";
 import IconRight from "../Resources/Images/Icons/icon_arrow_right.png";
 import RNScrollView from "../Components/RNScrollView";
 import Dictionary from "../Resources/dictionary.json";
+import RNFS from "react-native-fs";
 
 const CHINESE_REGEX = /[\u4E00-\u9FCC\u3400-\u4DB5\uFA0E\uFA0F\uFA11\uFA13\uFA14\uFA1F\uFA21\uFA23\uFA24\uFA27-\uFA29]|[\ud840-\ud868][\udc00-\udfff]|\ud869[\udc00-\uded6\udf00-\udfff]|[\ud86a-\ud86c][\udc00-\udfff]|\ud86d[\udc00-\udf34\udf40-\udfff]|\ud86e[\udc00-\udc1d]/g;
 interface Props {
@@ -26,16 +27,42 @@ interface Props {
 function StrokeOrderScreen(props: Props): ReactElement {
   const [input, setInput] = useState("");
   const [data, setData] = useState([""]);
+  const [characterData, setCharaceterData] = useState([""]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   function showCharacter() {
     Keyboard.dismiss();
     const data = input.match(CHINESE_REGEX);
     if (data && data.length > 0) {
-      setData(data);
-      setCurrentIndex(0);
+      try {
+        (async function() {
+          let _characterData = [""];
+          for (const index in data) {
+            const character = data[index];
+            const charCode = character.charCodeAt(0);
+            const path = RNFS.DocumentDirectoryPath + "/" + charCode + ".svg";
+            console.log("PATH", path);
+            RNFS.read(path)
+              .then(res => {
+                _characterData.push(res);
+              })
+              .catch(e => {
+                // @ts-ignore
+                data.splice(index, 1);
+                console.log(e);
+              });
+          }
+          setData(data);
+          setCharaceterData(_characterData);
+          setCurrentIndex(0);
+        })();
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
+
+  useEffect(() => {}, [data]);
 
   function renderCharacter(): ReactElement {
     return (
@@ -56,7 +83,10 @@ function StrokeOrderScreen(props: Props): ReactElement {
             />
           </TouchableOpacity>
         </View>
-        <ChineseCharacter character={data[currentIndex]} />
+        <ChineseCharacter
+          character={data[currentIndex]}
+          svg={characterData[currentIndex]}
+        />
         <View style={styles.nextContainer}>
           <TouchableOpacity
             onPress={() => {

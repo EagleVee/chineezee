@@ -5,30 +5,29 @@ import {
   TouchableOpacity,
   TextInput,
   FlatList,
-  TouchableWithoutFeedback,
   Switch
 } from "react-native";
 
 import styles from "./Styles/DictionaryScreenStyle";
 import Container from "../Components/Container";
 import i18n from "i18n-js";
-import { DictionaryContext } from "../Providers/DictionaryProvider";
 import KeyExtractor from "../Common/KeyExtractor";
 import traditional from "../Resources/traditional.json";
 import simplified from "../Resources/simplified.json";
 import { Colors } from "../Themes";
+import { AppContext } from "../Providers";
 
 interface Props {
   navigation: any;
 }
 
 function DictionaryScreen(props: Props): ReactElement {
+  const { state, actions } = useContext(AppContext);
   const { navigation } = props;
   const [searchText, setSearchText] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [isSimplified, setIsSimplified] = useState(true);
-  const { state, dispatch } = useContext(DictionaryContext);
-  const { simplifiedWords, traditionalWords } = state;
+  const { simplifiedWords, traditionalWords } = state.dictionary;
   const dictionary = isSimplified ? simplified : traditional;
 
   const [debounce, setDebounce] = useState(Date.now());
