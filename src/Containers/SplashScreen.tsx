@@ -7,12 +7,9 @@ import Icon from "react-native-vector-icons/Fontisto";
 import simplified from "../Resources/simplified.json";
 import traditional from "../Resources/traditional.json";
 import { AppContext } from "../Providers";
+import {ScreenProps} from "../Types";
 
-interface Props {
-  navigation: any;
-}
-
-export default function SplashScreen(props: Props): ReactElement {
+export default function SplashScreen(props: ScreenProps): ReactElement {
   const { navigation } = props;
   const { state, dispatch, actions } = useContext(AppContext);
 

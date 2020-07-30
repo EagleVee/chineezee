@@ -37,12 +37,9 @@ import { View, Text } from "react-native";
 import styles from "./Styles/${fileName}Style";
 import Container from "../Components/Container";
 import RNScrollView from "../Components/RNScrollView";
+import { ScreenProps } from "../Types";
 
-interface Props {
-  navigation: any;
-}
-
-export default function ${fileName}(props: Props): ReactElement {
+export default function ${fileName}(props: ScreenProps): ReactElement {
   return (
     <Container style={styles.container} notSafeArea isPadding={false}>
       <RNScrollView>

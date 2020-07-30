@@ -7,11 +7,9 @@ import RNScrollView from "../Components/RNScrollView";
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import KeyExtractor from "../Common/KeyExtractor";
 import i18n from "i18n-js";
-interface Props {
-  navigation: any;
-}
+import {ScreenProps} from "../Types";
 
-export default function SettingScreen(props: Props): ReactElement {
+export default function SettingScreen(props: ScreenProps): ReactElement {
   const { navigation } = props;
   const listSettings = [
     {

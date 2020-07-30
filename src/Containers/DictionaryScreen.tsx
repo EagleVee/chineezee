@@ -16,12 +16,9 @@ import traditional from "../Resources/traditional.json";
 import simplified from "../Resources/simplified.json";
 import { Colors } from "../Themes";
 import { AppContext } from "../Providers";
+import {ScreenProps} from "../Types";
 
-interface Props {
-  navigation: any;
-}
-
-function DictionaryScreen(props: Props): ReactElement {
+function DictionaryScreen(props: ScreenProps): ReactElement {
   const { state, actions } = useContext(AppContext);
   const { navigation } = props;
   const [searchText, setSearchText] = useState("");

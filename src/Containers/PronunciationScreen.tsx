@@ -5,12 +5,9 @@ import styles from "./Styles/StrokeOrderScreenStyle";
 import Container from "../Components/Container";
 import i18n from "i18n-js";
 import { Player } from "@react-native-community/audio-toolkit";
+import { ScreenProps } from "../Types";
 
-interface Props {
-  navigation: any;
-}
-
-function PronunciationScreen(props: Props): ReactElement {
+function PronunciationScreen(props: ScreenProps): ReactElement {
   function renderAudioPlayer() {
     const playSound = () => {
       // const player = new Player("t_a4.mp3", { autoDestroy: true });
