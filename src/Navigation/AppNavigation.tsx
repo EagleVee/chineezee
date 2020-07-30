@@ -1,6 +1,4 @@
-import {
-  createStackNavigator
-} from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -102,11 +100,7 @@ function AppNavigation(): React.ReactElement {
     <NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName="SplashScreen">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        <Stack.Screen
-          name="AppTab"
-          component={AppTab}
-          options={{ gestureEnabled: false }}
-        />
+        <Stack.Screen name="AppTab" component={AppTab} />
         <Stack.Screen name="WordDetailScreen" component={WordDetailScreen} />
         <Stack.Screen name="AboutScreen" component={AboutScreen} />
       </Stack.Navigator>

@@ -62,37 +62,25 @@ export default StyleSheet.create({
 };
 
 const providerContent = fileName => {
-  return `import initialState, { ${fileName}Reducer, ${fileName}Actions } from "../ReduxHooks/${fileName}Redux";
-import React, { createContext, useReducer, Dispatch, ReactNode } from "react";
-import API from "../API";
-import { put } from "./index";
-import { Action } from "../Types";
+  return `import API from "../../API";
+import { Dispatch } from "react";
+import { Action } from "../../Types";
 
-export const ${fileName}Context = createContext({});
-export const ${fileName}Provider = ${fileName}Context.Provider;
+const ${fileName}Actions = (state = {}, dispatch: Dispatch<Action>) => {
+  const doSomething = async (words: string[]) => {
+    dispatch({
+      type: "SET_SIMPLIFIED_WORDS",
+      payload: words
+    });
+  };
 
-interface Props {
-  children?: ReactNode;
-}
-
-export default function Wrapper(props: Props) {
-  const [state, dispatch] = useReducer(${fileName}Reducer, initialState);
-  const actions = mapActionsToDispatch(dispatch);
-  return (
-    <${fileName}Provider value={{ state, dispatch, ...actions }}>
-      {props.children}
-    </${fileName}Provider>
-  );
-}
-export const mapActionsToDispatch = (dispatch: Dispatch<Action>) => {
   return {
-    doSomething: doSomething(dispatch)
+    doSomething
   };
 };
 
-const doSomething = (dispatch: Dispatch<Action>) => async () => {
-  await put(dispatch, ${fileName}Actions.doSomething, "Some other things");
-};
+export default ${fileName}Actions;
+
 `;
 };
 
@@ -103,13 +91,9 @@ export const initialState = {
   something: "Somethings"
 };
 
-export const ${fileName}Actions = {
-  doSomething: "DO_SOMETHING"
-};
-
 export const ${fileName}Reducer = (state: object, action: Action) => {
   switch (action.type) {
-    case ${fileName}Actions.doSomething:
+    case "DO_SOMETHING":
       return { ...state, something: action.payload };
     default:
       return state;
@@ -149,8 +133,8 @@ const createContainer = fileName => {
 const createProvider = fileName => {
   const provider = providerContent(fileName);
   const reducer = reducerContent(fileName);
-  const providerPath = `src/Providers/${fileName}Provider.tsx`;
-  const reducerPath = `src/ReduxHooks/${fileName}Redux.ts`;
+  const providerPath = `src/Providers/Actions/${fileName}Actions.ts`;
+  const reducerPath = `src/Providers/Reducers/${fileName}Reducer.ts`;
   if (fs.existsSync(providerPath) || fs.existsSync(reducerPath)) {
     throw new Error("File existed!");
   } else {

@@ -1,5 +1,6 @@
 import React, { ReactElement, useContext, useEffect } from "react";
 import { View, Image } from "react-native";
+import { StackActions } from "@react-navigation/native";
 import { Colors } from "../Themes/index";
 // @ts-ignore
 import Icon from "react-native-vector-icons/Fontisto";
@@ -12,27 +13,30 @@ interface Props {
 }
 
 export default function SplashScreen(props: Props): ReactElement {
+  const { navigation } = props;
   const { state, dispatch, actions } = useContext(AppContext);
 
+  const goToApp = () => {
+    navigation.dispatch(StackActions.replace("AppTab"));
+  };
+
   useEffect(() => {
-    const startupDictionary = (callback: () => void) => {
+    const startupDictionary = () => {
       try {
         (async function() {
           const simplifiedWords = Object.keys(simplified);
           const traditionalWords = Object.keys(traditional);
           await actions.dictionary.setSimplifiedWords(simplifiedWords);
           await actions.dictionary.setTraditionalWords(traditionalWords);
-          await callback();
+          await goToApp();
         })();
       } catch (e) {
         console.log(e);
-        callback();
+        goToApp();
       }
     };
 
-    startupDictionary(() => {
-      props.navigation.navigate("AppTab");
-    });
+    startupDictionary();
   }, []);
 
   return (
