@@ -16,17 +16,11 @@ import { Colors } from "../Themes/index";
 import SplashScreen from "../Containers/SplashScreen";
 import WordDetailScreen from "../Containers/WordDetailScreen";
 import SettingScreen from "../Containers/SettingScreen";
-
-export type RootStackParamList = {
-  AppTab: ReactElement;
-  SplashScreen: ReactElement;
-  WordDetailScreen: ReactElement;
-  AboutScreen: ReactElement;
-};
+import FlashCardScreen from "../Containers/FlashCardScreen";
 
 const Tab = createBottomTabNavigator();
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator();
 
 function AppTab(): React.ReactElement {
   return (
@@ -98,11 +92,12 @@ function AppTab(): React.ReactElement {
 function AppNavigation(): React.ReactElement {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="SplashScreen">
+      <Stack.Navigator headerMode="none" initialRouteName="FlashCardScreen">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="AppTab" component={AppTab} />
         <Stack.Screen name="WordDetailScreen" component={WordDetailScreen} />
         <Stack.Screen name="AboutScreen" component={AboutScreen} />
+        <Stack.Screen name="FlashCardScreen" component={FlashCardScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

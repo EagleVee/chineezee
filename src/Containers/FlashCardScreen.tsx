@@ -4,12 +4,13 @@ import styles from "./Styles/FlashCardScreenStyle";
 import Container from "../Components/Container";
 import RNScrollView from "../Components/RNScrollView";
 import { ScreenProps } from "../Types";
+import FlashCard from "../Components/FlashCard";
 
 export default function FlashCardScreen(props: ScreenProps): ReactElement {
   return (
     <Container style={styles.container} notSafeArea isPadding={false}>
       <RNScrollView>
-        <Text>FlashCardScreen</Text>
+        <FlashCard card={{ title: "Hello", description: "World" }} />
       </RNScrollView>
     </Container>
   );

@@ -25,6 +25,7 @@ export default function SplashScreen(props: ScreenProps): ReactElement {
           const traditionalWords = Object.keys(traditional);
           await actions.dictionary.setSimplifiedWords(simplifiedWords);
           await actions.dictionary.setTraditionalWords(traditionalWords);
+          await actions.dictionary.fetchSvgs();
           await goToApp();
         })();
       } catch (e) {

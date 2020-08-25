@@ -3,7 +3,8 @@ import { Action } from "../../Types";
 export const initialState = {
   simplifiedWords: [""],
   traditionalWords: [""],
-  dictionary: [""]
+  dictionary: [""],
+  svgs: {}
 };
 
 export const DictionaryReducer = (state: object, action: Action) => {
