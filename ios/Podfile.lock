@@ -227,6 +227,8 @@ PODS:
     - ReactCommon/jscallinvoker (= 0.61.5)
   - ReactNativeAudioToolkit (2.0.3):
     - React
+  - rn-fetch-blob (0.12.0):
+    - React-Core
   - RNCAsyncStorage (1.11.0):
     - React
   - RNCMaskedView (0.1.10):
@@ -290,6 +292,7 @@ DEPENDENCIES:
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "ReactNativeAudioToolkit (from `../node_modules/@react-native-community/audio-toolkit`)"
+  - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
@@ -368,6 +371,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeAudioToolkit:
     :path: "../node_modules/@react-native-community/audio-toolkit"
+  rn-fetch-blob:
+    :path: "../node_modules/rn-fetch-blob"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
   RNCMaskedView:
@@ -424,6 +429,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   ReactNativeAudioToolkit: de9610f323e855ac6574be8c99621f3d57c5df06
+  rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNDeviceInfo: b6e650fbd234732c759544218657d549b4339038

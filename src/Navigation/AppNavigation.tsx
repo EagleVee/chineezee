@@ -92,7 +92,7 @@ function AppTab(): React.ReactElement {
 function AppNavigation(): React.ReactElement {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="FlashCardScreen">
+      <Stack.Navigator headerMode="none" initialRouteName="SplashScreen">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="AppTab" component={AppTab} />
         <Stack.Screen name="WordDetailScreen" component={WordDetailScreen} />

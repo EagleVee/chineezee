@@ -8,6 +8,7 @@ import simplified from "../Resources/simplified.json";
 import traditional from "../Resources/traditional.json";
 import { AppContext } from "../Providers";
 import {ScreenProps} from "../Types";
+import {LocalStorage} from "../Common/LocalStorage";
 
 export default function SplashScreen(props: ScreenProps): ReactElement {
   const { navigation } = props;
@@ -25,7 +26,14 @@ export default function SplashScreen(props: ScreenProps): ReactElement {
           const traditionalWords = Object.keys(traditional);
           await actions.dictionary.setSimplifiedWords(simplifiedWords);
           await actions.dictionary.setTraditionalWords(traditionalWords);
-          await actions.dictionary.fetchSvgs();
+          console.log("GET SVG");
+          const localSvgs = await LocalStorage.get("svgAssets", "");
+          console.log("LOCAL SVGS", localSvgs);
+          if (localSvgs.length > 0) {
+            await actions.dictionary.setSvgAssets(JSON.parse(localSvgs));
+          } else {
+            await actions.dictionary.fetchSvgs();
+          }
           await goToApp();
         })();
       } catch (e) {
