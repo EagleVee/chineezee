@@ -134,6 +134,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -180,7 +181,6 @@ android {
 }
 
 dependencies {
-    implementation project(':@react-native-community_audio-toolkit')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-splash-screen')
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -200,6 +200,17 @@ dependencies {
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
+}
+
+android.applicationVariants.all { variant ->
+    variant.outputs.all { output ->
+        def project = "Chinezee"
+        def SEP = "_"
+        def date = new Date()
+        def formattedDate = date.format('ddMMyy_HHmm')
+        def newApkName = project + SEP + formattedDate".apk"
+        output.outputFileName = newApkName
+    }
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
