@@ -5,8 +5,7 @@ import styles from "./Styles/ChineseCharacterStyle";
 import i18n from "i18n-js";
 import { WIDTH_RATIO } from "../Config/Dimens";
 import { Colors } from "../Themes";
-
-const SvgAssets: any[] = [];
+import SvgAssets from "../Resources/SvgAssets";
 
 interface Props {
   character: string;

@@ -38,7 +38,7 @@ const DictionaryActions = (state = {}, dispatch: Dispatch<Action>) => {
   const fetchSvgs = async (onSuccess = () => {}, onFailed = () => {}) => {
     const response = await RNFetchBlob.config({
       fileCache: true,
-      appendExt: "zip"
+      path: DocumentDirectoryPath + "/svg.zip"
     }).fetch("GET", SVG_ENDPOINT);
     const status = response.info().status;
     if (status === STATUS_OK) {
@@ -49,19 +49,25 @@ const DictionaryActions = (state = {}, dispatch: Dispatch<Action>) => {
         DocumentDirectoryPath,
         "UTF-8"
       );
-      const unzippedFiles = await readDir(unzippedPath + "/svgs");
-      let svgAssets = Object.create({});
-      for await (const file of unzippedFiles) {
-        const { name, path } = file;
-        const fileContent = await readFile(path, "utf8");
-        const nameWithoutExtension = name.split(".")[0];
-        Object.assign(svgAssets, {
-          [`${nameWithoutExtension}`]: fileContent
-        });
-      }
-      await LocalStorage.set("svgAssets", JSON.stringify(svgAssets));
-      console.log(LocalStorage.get("svgAssets", "DEFAULT"));
-      await setSvgAssets(svgAssets);
+      console.log("UNZIPPED PATH", unzippedPath);
+      const fileStream = await RNFetchBlob.fs.readStream(
+        unzippedPath + "/svg.json",
+        "utf8"
+      );
+      fileStream.open();
+      let fileContent = "";
+      fileStream.onData(chunk => {
+        fileContent = fileContent + chunk;
+      });
+      fileStream.onEnd(async () => {
+        // console.log("FILE CONTENT", fileContent);
+        const parsedAssets = JSON.parse(fileContent);
+        console.log("ASSETS", fileContent);
+        await LocalStorage.set("svgAssets", fileContent);
+        console.log(LocalStorage.get("svgAssets", "DEFAULT"));
+        await setSvgAssets(parsedAssets);
+        await onSuccess();
+      });
     }
   };
 

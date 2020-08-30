@@ -1,5 +1,5 @@
 export const API_ENDPOINT = "http://ccdb.hemiola.com/characters";
-export const SVG_ENDPOINT = "https://chinezee.s3-ap-southeast-1.amazonaws.com/svgs.zip";
+export const SVG_ENDPOINT = "https://chinezee.s3-ap-southeast-1.amazonaws.com/svg.zip";
 export const REQUEST_TIME_OUT = 30000;
 export const MAX_FILE_SIZE = 25000000;
 
