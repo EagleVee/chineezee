@@ -31,7 +31,7 @@
     "@types/i18n-js": "^3.0.1",
     "@types/react": "^16.9.23",
     "@types/react-native": "^0.61.19",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "hanzi-writer": "^2.2.2",
     "i18n-js": "^3.5.1",
     "lodash": "^4.17.15",
